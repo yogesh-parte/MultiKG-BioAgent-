@@ -20,8 +20,6 @@ The system:
 
 ---
 
-
-
 ![Project banner](./multi-kg-biomed-chatbot/assets/banner.jpeg)
 
 ---
@@ -98,4 +96,43 @@ uv sync
 
 ```
 
+## Documentation
 
+See the docs/ folder for:
+	•	PROJECT_PROPOSAL.md – problem, motivation, high-level solution.
+	•	ARCHITECTURE.md – agent design and call graph.
+	•	AGENTS.md – per-agent responsibilities and prompts.
+	•	KGS_INTEGRATION.md – how each KG is integrated.
+	•	TRAPI_EXAMPLES.md – example TRAPI messages and responses.
+	•	ROADMAP.md – planned features.
+
+⸻
+
+## Contributing
+
+We gladly welcome issues, ideas, and PRs.
+
+See CONTRIBUTING.md￼ for:
+	•	how to set up your dev environment
+	•	coding style
+	•	how to add a new Knowledge Provider
+	•	how to extend the agent workflow
+
+⸻
+
+## License
+
+This project is licensed under the Apache License 2.0 – see LICENSE￼.
+
+⸻
+## Acknowledgements
+
+This project builds on the work of:
+	•	NCATS Translator and the Translator ReasonerAPI/TRAPI ecosystem
+	•	Monarch Initiative and other biomedical knowledge graph providers
+	•	The open-source and clinical data science communities
+
+## Team
+
+1. Yogesh PARTE, PhD
+2. Rohan Routh, MS
