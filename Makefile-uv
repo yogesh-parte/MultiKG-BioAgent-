@@ -1,0 +1,99 @@
+# ------------------------------------------------------------
+# Project: multi-kg-biomed-chatbot
+# Makefile using uv (ultra-fast Python package manager)
+# ------------------------------------------------------------
+
+PYTHON := .venv/bin/python
+UV := uv
+APP := app/main.py
+
+# ----------------------
+# Environment Setup
+# ----------------------
+
+.PHONY: venv
+venv:
+	$(UV) venv
+
+.PHONY: sync
+sync:
+	$(UV) sync
+
+.PHONY: install
+install:
+	$(UV) pip install -e .
+
+.PHONY: dev
+dev:
+	$(UV) pip install -e ".[dev]"
+
+# ----------------------
+# Run Application
+# ----------------------
+
+.PHONY: run
+run:
+	$(PYTHON) -m uvicorn app.main:app --reload
+
+# ----------------------
+# Testing
+# ----------------------
+
+.PHONY: test
+test:
+	$(UV) run pytest -q
+
+.PHONY: test-verbose
+test-verbose:
+	$(UV) run pytest -vv
+
+# ----------------------
+# Lint & Format
+# ----------------------
+
+.PHONY: lint
+lint:
+	$(UV) run ruff check .
+
+.PHONY: format
+format:
+	$(UV) run ruff format .
+
+.PHONY: style
+style: lint format
+
+# ----------------------
+# Cleaning
+# ----------------------
+
+.PHONY: clean
+clean:
+	rm -rf .venv
+	rm -rf __pycache__ */__pycache__
+	rm -rf .pytest_cache
+	rm -rf .ruff_cache
+
+# ----------------------
+# Full Reset
+# ----------------------
+
+.PHONY: reset
+reset: clean venv sync
+
+# ----------------------
+# Print Help
+# ----------------------
+
+.PHONY: help
+help:
+	@echo "Makefile targets:"
+	@echo "  venv         Create uv virtual environment"
+	@echo "  sync         Install dependencies from pyproject.toml"
+	@echo "  install      Install project in editable mode"
+	@echo "  dev          Install project with dev dependencies"
+	@echo "  run          Run FastAPI app"
+	@echo "  test         Run tests"
+	@echo "  lint         Lint code using ruff"
+	@echo "  format       Format code using ruff"
+	@echo "  clean        Clean build artifacts"
+	@echo "  reset        Full reset: clean + venv + sync"
