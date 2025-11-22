@@ -84,7 +84,7 @@ This project builds a **KG-aware chat assistant** that:
 
 ## Installation (dev)
 ```bash
-git clone https://github.com/yogesh-parte/multikg-bioAgent.git
+git clone https://github.com/yogesh-parte/MultiKG-bioAgent.git
 cd multikg-bioAgent
 
 uv venv
