@@ -67,20 +67,22 @@ This project builds a **KG-aware chat assistant** that:
 
 
 ## Core Agents
-	•	Chatfront Agent – UI-facing conversation agent
-	•	Query Graph Builder Agent – converts NL question → TRAPI query graph
-	•	Multi-KG Orchestrator Agent – routes TRAPI queries to KPs
-	•	Per-KG Agents/Tools – Monarch, Clinical Connections, BigGIM, Drug Approvals, Clinical Trials, Multiomics
-	•	Evidence Merger Agent – canonicalises nodes/edges, aggregates scores, ranks answers
-	•	Explanation Agent – generates human-readable answer from merged evidence
+
+-	Chatfront Agent – UI-facing conversation agent
+-	Query Graph Builder Agent – converts NL question → TRAPI query graph
+-	Multi-KG Orchestrator Agent – routes TRAPI queries to KPs
+-	Per-KG Agents/Tools – Monarch, Clinical Connections, BigGIM, Drug Approvals, Clinical Trials, Multiomics
+-	Evidence Merger Agent – canonicalises nodes/edges, aggregates scores, ranks answers
+-	Explanation Agent – generates human-readable answer from merged evidence
 
 ## Key Technologies
-	•	Google ADK (Agent Developer Kit) – multi-agent orchestration
-	•	TRAPI / ReasonerAPI – standardised biomedical query/response format
-	•	Biolink Model – semantic categories and predicates
-	•	Python 3.10+, FastAPI – serving the chat API
-	•	httpx – async HTTP calls to KGs.
-	•	Optional: Docker, GitHub Actions for CI
+
+- Google ADK (Agent Developer Kit) – multi-agent orchestration
+- TRAPI / ReasonerAPI – standardised biomedical query/response format
+- Biolink Model – semantic categories and predicates
+- Python 3.10+, FastAPI – serving the chat API
+- httpx – async HTTP calls to KGs
+- Optional: Docker, GitHub Actions for CI
 
 ## Installation (dev)
 ```bash
