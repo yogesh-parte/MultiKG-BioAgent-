@@ -63,32 +63,4 @@ This project builds a **KG-aware chat assistant** that:
 
 ##  High-Level Architecture
 
-```mermaid
-flowchart TD
-
-    U["User question"] --> CF["Chatfront Agent (LLM)"]
-
-    CF --> QG["Query Graph Builder (LLM)"]
-    QG --> TRAPI["TRAPI Query Graph"]
-
-    TRAPI --> ORCH["Multi-KG Orchestrator (LLM)"]
-
-    ORCH --> MON["Monarch KG Agent / Tool"]
-    ORCH --> CC["Clinical Connections TRAPI KP"]
-    ORCH --> BG["BigGIM TRAPI KP"]
-    ORCH --> DA["Drug Approvals TRAPI KP"]
-    ORCH --> CT["Clinical Trials TRAPI KP"]
-    ORCH --> OM["Wellness Multiomics TRAPI KP"]
-
-    MON --> MER["Evidence Merger (Python)"]
-    CC --> MER
-    BG --> MER
-    DA --> MER
-    CT --> MER
-    OM --> MER
-
-    MER --> EXP["Explanation Agent (LLM)"]
-    EXP --> CF
-    CF --> A["Final answer with genes, drugs, trials"]
-
-```
+<img width="1024" height="765" alt="image" src="https://github.com/user-attachments/assets/3597b831-2440-4bf9-a194-5ac2bac30a80" />
