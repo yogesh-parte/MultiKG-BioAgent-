@@ -1,0 +1,107 @@
+# workflows/disease_gene_drug_workflow.yaml
+# ADK Workflow YAML (Hybrid: Python + Yaml definition based ADK workflow)
+name: disease-gene-drug-multi-kg
+description: >
+  Multi-agent workflow to answer disease/gene/drug questions by querying
+  multiple NCATS Translator-aligned knowledge graphs and Monarch KG.
+
+agents:
+  - id: chatfront_agent
+    type: llm
+    entrypoint: agents.chatfront_agent:ChatfrontAgent
+    role: >
+      Main conversational agent. Routes biomedical questions into the
+      query-graph workflow and returns summarised answers.
+
+  - id: query_graph_builder
+    type: llm
+    entrypoint: agents.query_graph_builder_agent:QueryGraphBuilderAgent
+    tools: []
+    prompt_template: query_graph_builder_prompt
+
+  - id: orchestrator
+    type: llm
+    entrypoint: agents.orchestrator_agent:OrchestratorAgent
+    tools:
+      - monarch_tool
+      - clinical_connections_kp
+      - biggim_kp
+      - drug_approvals_kp
+      - clinical_trials_kp
+      - wellness_multiomics_kp
+    prompt_template: orchestrator_prompt
+
+  - id: evidence_merger
+    type: code
+    entrypoint: agents.evidence_merger_agent:merge_evidence
+
+  - id: explanation_agent
+    type: llm
+    entrypoint: agents.explanation_agent:ExplanationAgent
+    prompt_template: explanation_prompt
+
+tools:
+  - id: monarch_tool
+    type: code
+    entrypoint: tools.monarch_tool:monarch_get_associations
+
+  - id: clinical_connections_kp
+    type: code
+    entrypoint: tools.translator_kp_tool:TranslatorKPClient
+    init_args:
+      base_url: "https://<clinical-connections-trapi>/query"
+
+  - id: biggim_kp
+    type: code
+    entrypoint: tools.translator_kp_tool:TranslatorKPClient
+    init_args:
+      base_url: "https://<biggim-trapi>/query"
+
+  - id: drug_approvals_kp
+    type: code
+    entrypoint: tools.translator_kp_tool:TranslatorKPClient
+    init_args:
+      base_url: "https://<drug-approvals-trapi>/query"
+
+  - id: clinical_trials_kp
+    type: code
+    entrypoint: tools.translator_kp_tool:TranslatorKPClient
+    init_args:
+      base_url: "https://<trials-trapi>/query"
+
+  - id: wellness_multiomics_kp
+    type: code
+    entrypoint: tools.translator_kp_tool:TranslatorKPClient
+    init_args:
+      base_url: "https://<multiomics-trapi>/query"
+
+workflow:
+  # High level: chatfront → query_graph_builder → orchestrator → evidence_merger → explanation_agent
+  steps:
+    - id: build_query_graph
+      agent: query_graph_builder
+      input_from: chatfront_agent
+      output_key: trapi_message
+
+    - id: call_kgs
+      agent: orchestrator
+      input:
+        trapi_message: "{{ steps.build_query_graph.output.trapi_message }}"
+      output_key: kg_responses
+
+    - id: merge_evidence
+      agent: evidence_merger
+      input:
+        responses: "{{ steps.call_kgs.output.responses }}"
+      output_key: merged_graph
+
+    - id: explain
+      agent: explanation_agent
+      input:
+        question: "{{ chatfront_agent.latest_user_message }}"
+        merged_graph: "{{ steps.merge_evidence.output }}"
+      output_key: final_answer
+
+  return:
+    from_step: explain
+    key: final_answer

@@ -1,0 +1,37 @@
+---
+
+## 5. `pyproject.toml` (basic scaffold)
+
+```toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-kg-biomed-chatbot"
+version = "0.1.0"
+description = "Multi-agent biomedical KG chatbot using Google ADK and TRAPI/ReasonerAPI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "httpx",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-asyncio",
+  "ruff",
+  "black",
+]
+
+[project.urls]
+Homepage = "https://github.com/<your-org>/multi-kg-biomed-chatbot"
+Issues = "https://github.com/<your-org>/multi-kg-biomed-chatbot/issues"
