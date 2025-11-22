@@ -1,5 +1,6 @@
 # Suggested folder structure
 
+```ascii
 multi-kg-biomed-chatbot/
   ├── README.md
   ├── LICENSE
@@ -47,3 +48,4 @@ multi-kg-biomed-chatbot/
       ├── __init__.py
       ├── test_trapi_examples.py
       └── test_monarch_tool.py
+```
