@@ -20,7 +20,9 @@ The system:
 
 ---
 
-<img width="1024" height="412" alt="image" src="https://github.com/user-attachments/assets/66344dd4-3ebe-41d0-ad62-2f557934f15c" />
+
+
+![Project banner](./multi-kg-biomed-chatbot/assets/banner.jpeg)
 
 ---
 
@@ -63,7 +65,7 @@ This project builds a **KG-aware chat assistant** that:
 
 ##  High-Level Architecture
 
-<img width="1024" height="765" alt="image" src="https://github.com/user-attachments/assets/3597b831-2440-4bf9-a194-5ac2bac30a80" />
+![High Level Architecture](./multi-kg-biomed-chatbot/assets/coreidea.jpeg)
 
 
 ## Core Agents
