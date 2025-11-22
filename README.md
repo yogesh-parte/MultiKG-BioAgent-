@@ -66,6 +66,8 @@ This project builds a **KG-aware chat assistant** that:
 ![High Level Architecture](./multi-kg-biomed-chatbot/assets/coreidea.jpeg)
 
 
+
+
 ## Core Agents
 
 -	Chatfront Agent – UI-facing conversation agent
@@ -74,6 +76,11 @@ This project builds a **KG-aware chat assistant** that:
 -	Per-KG Agents/Tools – Monarch, Clinical Connections, BigGIM, Drug Approvals, Clinical Trials, Multiomics
 -	Evidence Merger Agent – canonicalises nodes/edges, aggregates scores, ranks answers
 -	Explanation Agent – generates human-readable answer from merged evidence
+
+
+## Information flow between agents and user interface, and external services 
+![Calling Sequence](./multi-kg-biomed-chatbot/docs/images/InformationFlow-White.png)
+
 
 ## Key Technologies
 
