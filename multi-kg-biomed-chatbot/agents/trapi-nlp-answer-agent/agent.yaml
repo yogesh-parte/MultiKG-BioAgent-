@@ -1,0 +1,139 @@
+agent:
+  name: trapi-nlp-answer-agent
+  description: >
+    An agent that takes a biomedical natural language question and the TRAPI output
+    (query_graph + knowledge_graph + results) and generates a clinically accurate
+    natural-language answer by extracting and summarizing graph triples.
+  persona:
+    role: Biomedical KG Reasoning Assistant
+    traits:
+      - concise
+      - evidence-grounded
+      - transparent reasoning
+      - ontology-aware
+      - no hallucination
+
+input_schema:
+  type: object
+  properties:
+    question:
+      type: string
+    trapi_message:
+      type: object
+  required:
+    - question
+    - trapi_message
+
+tasks:
+  - id: extract_triples
+    description: >
+      Parse the TRAPI knowledge_graph and extract subject–predicate–object triples
+      referenced in "results". Extract publication evidence, support_graphs and
+      scoring metadata.
+    type: llm
+    prompt: |
+      Extract all subject→predicate→object triples from this TRAPI message.
+      Only extract triples referenced by edges found in "results".
+      Also extract the following:
+      - publication IDs
+      - knowledge_level
+      - edge_score
+      - literature co-occurrence counts
+      Represent output as JSON with keys:
+      {
+        "triples": [
+          {
+            "subject": "",
+            "predicate": "",
+            "object": "",
+            "evidence": {
+              "publications": [],
+              "knowledge_level": "",
+              "support_graphs": [],
+              "score": ""
+            }
+          }
+        ]
+      }
+      TRAPI message:
+      {{trapi_message}}
+
+    output_schema:
+      type: object
+      properties:
+        triples:
+          type: array
+          items:
+            type: object
+
+  - id: summarize_graph
+    description: >
+      Group triples by association type (positive, negative, co-occurrence).
+      Normalize disease names, remove duplicates, and organize by disease families.
+    type: llm
+    prompt: |
+      You are a biomedical knowledge graph summarizer.
+      Group the following triples into:
+        - positively_correlated
+        - negatively_correlated
+        - literature_cooccurrence
+      Use BioLink predicate semantics.
+      Also infer higher-level disease categories (e.g., lymphoma → hematologic cancers).
+      Output a structured JSON:
+      {
+        "positive": [],
+        "negative": [],
+        "cooccurrence": [],
+        "disease_families": {}
+      }
+      Triples:
+      {{extract_triples.output.triples}}
+
+    output_schema:
+      type: object
+
+  - id: generate_nlp_response
+    description: >
+      Produce a natural-language answer to the biomedical question using grouped triples,
+      disease families, confidence levels, and supporting metadata.
+    type: llm
+    prompt: |
+      Create a clear, clinically accurate natural-language answer for the question:
+      "{{question}}"
+
+      Use ONLY the grouped relationships below.
+      Distinguish:
+      - positive associations
+      - negative associations
+      - literature co-occurrence (weaker evidence)
+      - disease family summaries (oncologic clusters, metabolic clusters, etc.)
+
+      Do NOT hallucinate. Use only what the TRAPI graph provides.
+
+      Data:
+      {{summarize_graph.output}}
+
+    output_schema:
+      type: string
+
+flows:
+  default:
+    description: Standard TRAPI → triples → grouped → natural language flow
+    steps:
+      - task: extract_triples
+      - task: summarize_graph
+      - task: generate_nlp_response
+
+outputs:
+  - from: generate_nlp_response
+
+evaluation:
+  criteria:
+    - fidelity_to_trapi: >
+        Does not introduce information not present in TRAPI.
+    - biomedical_accuracy: >
+        Uses correct predicate semantics (positive correlation ≠ causation).
+    - coherence: >
+        Final answer is readable and well-structured for clinical audiences.
+    - evidence_transparency: >
+        Mentions types/strength of evidence where appropriate.
