@@ -35,7 +35,7 @@ Run:
 ```python 
 python runner.py \
   --question "Diseases associated with 2,3,7,8-tetrochlorodibenzo-p-dioxin" \
-  --trapi trapi_output.json
+  --trapi trapi_output-Q1.json
 ```
 
 # How to Run the FastAPI Server
