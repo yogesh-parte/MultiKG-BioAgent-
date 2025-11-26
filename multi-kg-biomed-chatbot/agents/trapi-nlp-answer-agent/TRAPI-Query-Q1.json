@@ -1,0 +1,32 @@
+{
+  "message": {
+    "nodes": {
+      "n0": {
+        "categories": [
+          "biolink:MolecularEntity"
+        ],
+        "name": "2,3,7,8-tetrochlorodibenzo-p-dioxin",
+        "ids": [
+          "PUBCHEM.COMPOUND:15625"
+        ]
+      },
+      "n1": {
+        "categories": [
+          "biolink:Disease"
+        ],
+        "name": "Disease"
+      }
+    },
+    "edges": {
+      "e0": {
+        "subject": "n0",
+        "object": "n1",
+        "predicates": [
+          "biolink:associated_with"
+        ]
+      }
+    },
+    "query": "Diseases associated with 2,3,7,8-tetrochlorodibenzo-p-dioxin"
+
+  }
+}

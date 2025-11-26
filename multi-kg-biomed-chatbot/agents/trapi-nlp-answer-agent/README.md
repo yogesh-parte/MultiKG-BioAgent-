@@ -12,7 +12,7 @@ This is the canonical structure used in Google ADK agent deployments:
 
 See: agents/trapi-nlp-answer-agent/runner.py
 
-# Folder Structure**
+# Folder Structure
 
 Recommended layout inside your ADK project:
 
@@ -22,6 +22,7 @@ agents/
     runner.py               # <-- YOU JUST GOT THIS
     __init__.py
 
+ * sample input, output JSON files provided
 
 # How to Test Locally
 
@@ -33,7 +34,7 @@ Run:
 
 ```python 
 python runner.py \
-  --question " " \
+  --question "Diseases associated with 2,3,7,8-tetrochlorodibenzo-p-dioxin" \
   --trapi trapi_output.json
 ```
 
@@ -48,7 +49,7 @@ Call with:
 ```bash
 curl -X POST http://localhost:8080/answer \
   -H "Content-Type: application/json" \
-  -d '{"question": "Diseases associated with TCDD", "trapi_message": {...}}'
+  -d '{"question": "Diseases associated with 2,3,7,8-tetrochlorodibenzo-p-dioxin", "trapi_message": {...}}'
 ```
 
 # Ready for Integration

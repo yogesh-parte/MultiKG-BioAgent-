@@ -1,0 +1,2975 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "ids": [
+            "CHEBI:28119"
+          ],
+          "categories": [
+            "biolink:MolecularEntity"
+          ],
+          "set_interpretation": "BATCH",
+          "constraints": [],
+          "member_ids": [],
+          "name": "2,3,7,8-tetrochlorodibenzo-p-dioxin"
+        },
+        "n1": {
+          "categories": [
+            "biolink:Disease"
+          ],
+          "set_interpretation": "BATCH",
+          "constraints": [],
+          "member_ids": [],
+          "name": "Disease"
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n0",
+          "object": "n1",
+          "predicates": [
+            "biolink:associated_with"
+          ],
+          "attribute_constraints": [],
+          "qualifier_constraints": []
+        }
+      }
+    },
+    "knowledge_graph": {
+      "nodes": {
+        "CHEBI:28119": {
+          "categories": [
+            "biolink:ChemicalEntityOrProteinOrPolypeptide",
+            "biolink:ChemicalOrDrugOrTreatment",
+            "biolink:ChemicalEntityOrGeneOrGeneProduct",
+            "biolink:PhysicalEssence",
+            "biolink:PhysicalEssenceOrOccurrent",
+            "biolink:SmallMolecule",
+            "biolink:MolecularEntity",
+            "biolink:ChemicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "TCDD",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "Any dibenzodioxine in which two or more hydrogens have been replaced by chlorines.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "CHEBI_ROLE_persistent_organic_pollutant"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "KEGG.COMPOUND:C07557",
+                "MESH:D000072317",
+                "MESH:D013749",
+                "HMDB:HMDB0258755",
+                "PUBCHEM.COMPOUND:15625",
+                "CAS:217-122-7",
+                "CAS:56795-67-6",
+                "CHEBI:36682",
+                "CHEMBL.COMPOUND:CHEMBL30327",
+                "INCHIKEY:HGUFODBRKLSHSI-UHFFFAOYSA-N",
+                "CHEBI:28119",
+                "UNII:DO80M48B6O",
+                "CAS:1746-01-6",
+                "GTOPDB:9642",
+                "UMLS:C4277576"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 81.3,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "CHEBI_ROLE_environmental_contaminant"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "8937",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            }
+          ]
+        },
+        "MONDO:0010811": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "benign prostatic hyperplasia",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_male_reproductive_system_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "EFO:0000284",
+                "MEDDRA:10004447",
+                "MEDDRA:10020728",
+                "UMLS:C0005001",
+                "HP:0008711",
+                "MESH:D011470",
+                "SNOMEDCT:433234005",
+                "UMLS:C1739363",
+                "OMIM:600082",
+                "MEDDRA:10036962",
+                "MEDDRA:10065030",
+                "UMLS:C1306871",
+                "medgen:312369",
+                "MEDDRA:10036961",
+                "DOID:11132",
+                "UMLS:C1704272",
+                "MONDO:0010811",
+                "UMLS:C2937421",
+                "MEDDRA:10020730",
+                "SNOMEDCT:266569009",
+                "MEDDRA:10004446",
+                "MEDDRA:10014840",
+                "UMLS:C1306869",
+                "NCIT:C2897",
+                "MEDDRA:10036963"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_reproductive_system_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A non-cancerous nodular enlargement of the prostate gland. It is characterized by the presence of epithelial cell nodules, and stromal nodules containing fibrous and smooth muscle elements. It is the most common urologic disorder in men, causing blockage of urine flow.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "29525",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 100,
+              "original_attribute_name": "information_content"
+            }
+          ]
+        },
+        "MONDO:0002406": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "dermatitis",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "An inflammatory process affecting the skin. Signs include red rash, itching, and blister formation. Representative examples are contact dermatitis, atopic dermatitis, and seborrheic dermatitis.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 64,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_dermatitis"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_inflammatory_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "MEDDRA:10014206",
+                "MESH:D004485",
+                "MEDDRA:10014184",
+                "MESH:D003872",
+                "DOID:2723",
+                "UMLS:C0013595",
+                "MEDDRA:10012454",
+                "ICD10:L30.9",
+                "HP:0000964",
+                "MONDO:0002406",
+                "SNOMEDCT:43116000",
+                "MEDDRA:10087879",
+                "SNOMEDCT:281104002",
+                "NCIT:C2983",
+                "medgen:849741",
+                "MEDDRA:10014200",
+                "MEDDRA:10014209",
+                "MEDDRA:10087884"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "70874",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_integumentary_system_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_skin_disorder"
+            }
+          ]
+        },
+        "MONDO:0002334": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "hematopoietic and lymphoid system neoplasm",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "107518",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "Neoplasms of the hematopoietic system, including hematopoietic cell neoplasms (e.g. leukemias, lymphomas) and non-hematopoietic cell neoplasms that can affect the hematopoietic system (e.g. lymph node and splenic sarcomas). --2003",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_system_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 47.5,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "UMLS:C0376545",
+                "MEDDRA:10086808",
+                "NCIT:C35813",
+                "HP:0004377",
+                "UMLS:C1512393",
+                "MEDDRA:10066476",
+                "MEDDRA:10066481",
+                "MESH:D019337",
+                "MONDO:0002334",
+                "MEDDRA:10086698",
+                "SNOMEDCT:129154003",
+                "medgen:268180",
+                "SNOMEDCT:269475001",
+                "DOID:2531",
+                "UMLS:C0348393"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematologic_disorder"
+            }
+          ]
+        },
+        "MONDO:0011565": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "metabolic syndrome X",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_metabolic_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_syndromic_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_nutritional_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_inborn_errors_of_metabolism"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "37170",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hereditary_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 100,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "UMLS:C1970051",
+                "MONDO:0011565",
+                "ICD10:E88.81",
+                "EFO:0000195",
+                "SNOMEDCT:237602007",
+                "UMLS:C4552048",
+                "UMLS:C1854178",
+                "OMIM:605552",
+                "DOID:14221",
+                "ICD9:277.7",
+                "MESH:D024821",
+                "medgen:1640883"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            }
+          ]
+        },
+        "MONDO:0009693": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "plasma cell myeloma",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_cell_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_immune_system_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 100,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematologic_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_leukocyte_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_B-cell_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_immune_system_cancer"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_myeloid_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_hemopathy"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A bone marrow-based plasma cell neoplasm characterized by a serum monoclonal protein and skeletal destruction with osteolytic lesions, pathological fractures, bone pain, hypercalcemia, and anemia. Clinical variants include non-secretory myeloma, smoldering myeloma, indolent myeloma, and plasma cell leukemia. (WHO, 2001)",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "icd11.foundation:526287100",
+                "SNOMEDCT:109989006",
+                "ICD10:C90.0",
+                "orphanet:29073",
+                "MEDDRA:10028568",
+                "icd11.foundation:1582389689",
+                "SNOMEDCT:55921005",
+                "MEDDRA:10028566",
+                "NCIT:C3242",
+                "MEDDRA:10028569",
+                "MEDDRA:10034613",
+                "MEDDRA:10035226",
+                "medgen:10122",
+                "UMLS:C0026764",
+                "OMIM:254500",
+                "MESH:D009101",
+                "MONDO:0009693",
+                "HP:0006775",
+                "EFO:0001378",
+                "SNOMEDCT:1162576007",
+                "DOID:9538",
+                "MEDDRA:10028228",
+                "ICD9:203.0",
+                "MEDDRA:10074470"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "67901",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:url",
+              "value": "https://www.ebi.ac.uk/ols/ontologies/doid/terms?obo_id=DOID:9538",
+              "value_type_id": "xsd:string",
+              "original_attribute_name": "url"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_system_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A myeloma that is located_in the plasma cells in bone marrow.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "definition"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoma"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_neoplasm"
+            }
+          ]
+        },
+        "MONDO:0005070": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "neoplasm",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "MEDDRA:10084713",
+                "UMLS:C4732738",
+                "MEDDRA:10029000",
+                "HP:0002664",
+                "MONDO:0005070",
+                "DOID:14566",
+                "EFO:0000616",
+                "MEDDRA:10028980",
+                "MEDDRA:10029104",
+                "SNOMEDCT:55342001",
+                "UMLS:CN236628",
+                "UMLS:C0027651",
+                "NCIT:C3262",
+                "medgen:10294",
+                "MESH:D009369",
+                "SNOMEDCT:108369006",
+                "MEDDRA:10084712"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:url",
+              "value": "https://www.ebi.ac.uk/ols/ontologies/doid/terms?obo_id=DOID:14566",
+              "value_type_id": "xsd:string",
+              "original_attribute_name": "url"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A benign or malignant tissue growth resulting from uncontrolled cell proliferation. Benign neoplastic cells resemble normal cells without exhibiting significant cytologic atypia, while malignant cells exhibit overt signs such as dysplastic features, atypical mitotic figures, necrosis, nuclear pleomorphism, and anaplasia. Representative examples of benign neoplasms include papillomas, cystadenomas, and lipomas; malignant neoplasms include carcinomas, sarcomas, lymphomas, and leukemias.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 35.9,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "2652987",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A disease that is characterized by abnormally rapid cell division.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "definition"
+            }
+          ]
+        },
+        "MONDO:0005062": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "lymphoma",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "161057",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 49.8,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_cell_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A malignant (clonal) proliferation of B- lymphocytes or T- lymphocytes which involves the lymph nodes, bone marrow and/or extranodal sites. This category includes Non-Hodgkin lymphomas and Hodgkin lymphomas.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:url",
+              "value": "https://www.ebi.ac.uk/ols/ontologies/doid/terms?obo_id=DOID:0060058",
+              "value_type_id": "xsd:string",
+              "original_attribute_name": "url"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_system_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoma"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A hematologic cancer that affects lymphocytes that reside in the lymphatic system and in blood-forming organs.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "definition"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematologic_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "HP:0002665",
+                "MEDDRA:10025315",
+                "EFO:0000574",
+                "SNOMEDCT:1163043007",
+                "SNOMEDCT:188676008",
+                "MEDDRA:10025633",
+                "NCIT:C3208",
+                "SNOMEDCT:118600007",
+                "MESH:D008223",
+                "UMLS:C0334621",
+                "ICD10:C85.9",
+                "MEDDRA:10025632",
+                "SNOMEDCT:115244002",
+                "medgen:44223",
+                "DOID:0060058",
+                "UMLS:C0024299",
+                "NCIT:C7065",
+                "MONDO:0005062",
+                "UMLS:C1536843",
+                "MEDDRA:10025310",
+                "MEDDRA:10025316",
+                "orphanet:223735"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_hemopathy"
+            }
+          ]
+        },
+        "MONDO:0018908": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "non-Hodgkin lymphoma",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 54.1,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_non-Hodgkin_lymphoma"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "Distinct from Hodgkin lymphoma both morphologically and biologically, non-Hodgkin lymphoma (NHL) is characterized by the absence of Reed-Sternberg cells, can occur at any age, and usually presents as a localized or generalized lymphadenopathy associated with fever and weight loss. The clinical course varies according to the morphologic type. NHL is clinically classified as indolent, aggressive, or having a variable clinical course. NHL can be of B-or T-/NK-cell lineage.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "55895",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_cell_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_system_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoma"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematologic_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:url",
+              "value": "https://www.ebi.ac.uk/ols/ontologies/doid/terms?obo_id=DOID:0060060",
+              "value_type_id": "xsd:string",
+              "original_attribute_name": "url"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "UMLS:C0024305",
+                "NCIT:C3211",
+                "DOID:0060060",
+                "orphanet:547",
+                "MONDO:0018908",
+                "EFO:0005952",
+                "SNOMEDCT:128929007",
+                "MEDDRA:10025311",
+                "MEDDRA:10029547",
+                "SNOMEDCT:1172592001",
+                "HP:0012539",
+                "UMLS:C1622813",
+                "UMLS:C1622254",
+                "MESH:D008228",
+                "SNOMEDCT:188675007",
+                "MEDDRA:10029593",
+                "medgen:6160"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_hemopathy"
+            }
+          ]
+        },
+        "MONDO:0005002": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "chronic obstructive pulmonary disease",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lung_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lower_respiratory_tract_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "MEDDRA:10009032",
+                "MEDDRA:10009026",
+                "MEDDRA:10070975",
+                "EFO:0000341",
+                "UMLS:C1527303",
+                "medgen:9818",
+                "SNOMEDCT:13645005",
+                "MEDDRA:10008828",
+                "MESH:D029424",
+                "MEDDRA:10029972",
+                "HP:0006510",
+                "icd11.foundation:133207228",
+                "MEDDRA:10010952",
+                "DOID:3083",
+                "MEDDRA:10009033",
+                "MONDO:0005002",
+                "OMIM:606963",
+                "ICD10:J44.9",
+                "UMLS:C0024117",
+                "MEDDRA:10009025",
+                "MEDDRA:10064611",
+                "NCIT:C3199",
+                "UMLS:C2751329"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "225411",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_upper_respiratory_tract_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 100,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A chronic and progressive lung disorder characterized by the loss of elasticity of the bronchial tree and the air sacs, destruction of the air sacs wall, thickening of the bronchial wall, and mucous accumulation in the bronchial tree. The pathologic changes result in the disruption of the air flow in the bronchial airways. Signs and symptoms include shortness of breath, wheezing, productive cough, and chest tightness. The two main types of chronic obstructive pulmonary disease are chronic obstructive bronchitis and emphysema.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_respiratory_system_disorder"
+            }
+          ]
+        },
+        "MONDO:0005385": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "aneurysm",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_vascular_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "DOID:178",
+                "UMLS:C0752127",
+                "MEDDRA:10013282",
+                "MEDDRA:10002329",
+                "SNOMEDCT:27550009",
+                "NCIT:C26693",
+                "EFO:0009659",
+                "MEDDRA:10047065",
+                "EFO:0004264",
+                "MESH:D020758",
+                "medgen:22621",
+                "HP:0002617",
+                "UMLS:C0042373",
+                "UMLS:C4020848",
+                "UMLS:C0002940",
+                "NCIT:C35117",
+                "MONDO:0005385",
+                "MEDDRA:10047059",
+                "MEDDRA:10059245",
+                "MESH:D000783",
+                "MEDDRA:10002360",
+                "MEDDRA:10047062",
+                "SNOMEDCT:432119003",
+                "SNOMEDCT:85659009",
+                "MESH:D014652",
+                "ICD10:I72",
+                "ICD9:442.9",
+                "ICD10:I72.9"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cardiovascular_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A general term used to describe any disease affecting blood vessels]. It includes vascular abnormalities caused by degenerative, metabolic and inflammatory conditions, embolic diseases, coagulative disorders, and functional disorders such as posteri or reversible encephalopathy syndrome.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "136409",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 55.4,
+              "original_attribute_name": "information_content"
+            }
+          ]
+        },
+        "MONDO:0005059": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "leukemia",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A malignant (clonal) hematologic disorder, involving hematopoietic stem cells and characterized by the presence of primitive or atypical myeloid or lymphoid cells in the bone marrow and the blood. Leukemias are classified as acute or chronic based on the degree of cellular differentiation and the predominant cell type present. Leukemia is usually associated with anemia, fever, hemorrhagic episodes, and splenomegaly. Common leukemias include acute myeloid leukemia, chronic myelogenous leukemia, acute lymphoblastic or precursor lymphoblastic leukemia, and chronic lymphocytic leukemia. Treatment is vital to patient survival; untreated, the natural course of acute leukemias is normally measured in weeks or months, while that of chronic leukemias is more often measured in months or years.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 55.8,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_cell_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "MESH:D007938",
+                "MONDO:0005059",
+                "MEDDRA:10024314",
+                "SNOMEDCT:87163000",
+                "MEDDRA:10060500",
+                "UMLS:C0023418",
+                "MEDDRA:10024329",
+                "DOID:1240",
+                "ICD10:C95.90",
+                "MEDDRA:10024312",
+                "MEDDRA:10024324",
+                "ICD9:208",
+                "MEDDRA:10045994",
+                "MEDDRA:10024288",
+                "HP:0001909",
+                "MEDDRA:10045992",
+                "NCIT:C3161",
+                "MEDDRA:10024323",
+                "MEDDRA:10060430",
+                "MEDDRA:10045991",
+                "SNOMEDCT:1162768007",
+                "EFO:0000565",
+                "MEDDRA:10024351",
+                "medgen:9725",
+                "SNOMEDCT:93143009",
+                "MEDDRA:10024352"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematopoietic_and_lymphoid_system_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_leukemia"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "208521",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_lymphoid_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_hematologic_disorder"
+            }
+          ]
+        },
+        "MONDO:0005015": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "diabetes mellitus",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_metabolic_disease"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A metabolic disorder characterized by abnormally high blood sugar levels due to diminished production of insulin or insulin resistance/desensitization.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_endocrine_pancreas_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_digestive_system_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_pancreas_disorder"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "614535",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_glucose_metabolism_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 66.6,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "medgen:8350",
+                "SNOMEDCT:73211009",
+                "ICD10:E08-E13",
+                "ICD9:250",
+                "DOID:9351",
+                "UMLS:C0011849",
+                "MEDDRA:10012594",
+                "NCIT:C2985",
+                "MEDDRA:10012601",
+                "HP:0000819",
+                "MONDO:0005015",
+                "icd11.foundation:465177735",
+                "EFO:0000400",
+                "MESH:D003920",
+                "MEDDRA:10012614"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_endocrine_system_disorder"
+            }
+          ]
+        },
+        "MONDO:0021100": {
+          "categories": [
+            "biolink:ThingWithTaxon",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:BiologicalEntity",
+            "biolink:NamedThing"
+          ],
+          "name": "breast neoplasm",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": 56.4,
+              "original_attribute_name": "information_content"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm_of_thorax"
+            },
+            {
+              "attribute_type_id": "biolink:description",
+              "value": "A benign or malignant neoplasm of the breast parenchyma. It can originate from the ducts, lobules or the breast adipose tissue. Breast neoplasms are much more common in females than males.",
+              "value_type_id": "dct:description",
+              "original_attribute_name": "description"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_cancer_or_benign_tumor"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_human_disease"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": [
+                "MONDO:0021100",
+                "medgen:264172",
+                "UMLS:C1458155",
+                "EFO:0003869",
+                "SNOMEDCT:126926005",
+                "MESH:D001943",
+                "NCIT:C2910",
+                "MEDDRA:10028985",
+                "MEDDRA:10006279",
+                "MEDDRA:10006285",
+                "HP:0100013"
+              ],
+              "original_attribute_name": "equivalent_identifiers"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": "338739",
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "omnicorp_article_count"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_neoplastic_disease_or_syndrome"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_breast_neoplasm"
+            },
+            {
+              "attribute_type_id": "biolink:Attribute",
+              "value": true,
+              "original_attribute_name": "MONDO_SUPERCLASS_breast_disorder"
+            }
+          ]
+        }
+      },
+      "edges": {
+        "e_1": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0010811",
+          "predicate": "biolink:negatively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D011470",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:17107848"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_2": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0002406",
+          "predicate": "biolink:negatively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:29482571"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D004485",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_3": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0002334",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D019337",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:19754930"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            }
+          ]
+        },
+        "e_4": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0011565",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:23674506"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D024821",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_5": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0009693",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D009101",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_6": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005070",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D009369",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:21810551",
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_7": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005062",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D008223",
+              "original_attribute_name": "original_object"
+            }
+          ]
+        },
+        "e_8": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0018908",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D008228",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_9": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005002",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D029424",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_10": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005385",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D014652",
+              "original_attribute_name": "original_object"
+            }
+          ]
+        },
+        "e_11": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005059",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D007938",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_12": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005015",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:18192277"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D003920",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            }
+          ]
+        },
+        "e_13": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0021100",
+          "predicate": "biolink:positively_correlated_with",
+          "sources": [
+            {
+              "resource_id": "infores:robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:automat-robokop"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-robokop",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:ctd"
+              ]
+            },
+            {
+              "resource_id": "infores:ctd",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association",
+              "original_attribute_name": "knowledge_level"
+            },
+            {
+              "attribute_type_id": "biolink:original_subject",
+              "value": "MESH:D013749",
+              "original_attribute_name": "original_subject"
+            },
+            {
+              "attribute_type_id": "biolink:original_object",
+              "value": "MESH:D001943",
+              "original_attribute_name": "original_object"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent",
+              "original_attribute_name": "agent_type"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": [
+                "PMID:19754930"
+              ],
+              "value_type_id": "linkml:Uriorcurie",
+              "original_attribute_name": "publications"
+            }
+          ]
+        },
+        "59b1ef57-f400-494c-aa52-88762eee725a": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0010811",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 2,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "59ead7f2-2465-4c2e-b715-bbefdc35f559": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0002406",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 14,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            }
+          ]
+        },
+        "143dcb4a-ca84-4211-a7b4-b4eeb4c1e3cc": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0002334",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 5,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "dd12554f-d4a2-411b-8bcf-ec69a82c7319": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0011565",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 10,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            }
+          ]
+        },
+        "f720a6d5-611f-4a15-b162-a5f26bdd27a2": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0009693",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 14,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            }
+          ]
+        },
+        "e3524dd4-9d7c-4508-9d37-bbfd6b548220": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005070",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 1118,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "8f4c2c7e-b6dc-437a-9633-ad5a2a78fd02": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005062",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 44,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "d58c0c1b-1e7d-4764-a54c-2fa0bef01d5a": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0018908",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 41,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            }
+          ]
+        },
+        "a118e2c1-ff1e-44a4-98cd-649a737ede13": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005002",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 31,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "380b4051-b2a6-4870-87ea-44a9c07b1863": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005385",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 2,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "3030afbf-a040-44a4-8959-3ef9e2d4ec29": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005059",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            },
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 20,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            }
+          ]
+        },
+        "ffd17cb1-4222-46b9-a590-d746552fefba": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0005015",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 84,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        },
+        "c7a935a7-5c38-4464-bbfd-e2356e0ea7e3": {
+          "subject": "CHEBI:28119",
+          "object": "MONDO:0021100",
+          "predicate": "biolink:occurs_together_in_literature_with",
+          "sources": [
+            {
+              "resource_id": "infores:omnicorp",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:has_count",
+              "value": 154,
+              "value_type_id": "EDAM:data_0006",
+              "original_attribute_name": "num_publications"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "statistical_association_pipeline"
+            },
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "statistical_association"
+            }
+          ]
+        }
+      }
+    },
+    "results": [
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0005070",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_6",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_5"
+            ],
+            "score": 0.6352778075263533
+          }
+        ],
+        "score": 0.6352778075263533
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0021100",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_13",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_12"
+            ],
+            "score": 0.4768943060700204
+          }
+        ],
+        "score": 0.4768943060700204
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0018908",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_8",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_7"
+            ],
+            "score": 0.47035577269449375
+          }
+        ],
+        "score": 0.47035577269449375
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0010811",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_1",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_0"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0002406",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_2",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_1"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0002334",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_3",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_2"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0011565",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_4",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_3"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0009693",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_5",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_4"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0005062",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_7",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_6"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0005002",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_9",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_8"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0005385",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_10",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_9"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0005059",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_11",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_10"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "CHEBI:28119",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "resource_id": "infores:automat-robokop",
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "e_12",
+                  "attributes": []
+                }
+              ]
+            },
+            "support_graphs": [
+              "OMNICORP_support_graph_11"
+            ],
+            "score": 0.41796240932899736
+          }
+        ],
+        "score": 0.41796240932899736
+      }
+    ],
+    "auxiliary_graphs": {
+      "OMNICORP_support_graph_0": {
+        "edges": [
+          "59b1ef57-f400-494c-aa52-88762eee725a"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_1": {
+        "edges": [
+          "59ead7f2-2465-4c2e-b715-bbefdc35f559"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_2": {
+        "edges": [
+          "143dcb4a-ca84-4211-a7b4-b4eeb4c1e3cc"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_3": {
+        "edges": [
+          "dd12554f-d4a2-411b-8bcf-ec69a82c7319"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_4": {
+        "edges": [
+          "f720a6d5-611f-4a15-b162-a5f26bdd27a2"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_5": {
+        "edges": [
+          "e3524dd4-9d7c-4508-9d37-bbfd6b548220"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_6": {
+        "edges": [
+          "8f4c2c7e-b6dc-437a-9633-ad5a2a78fd02"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_7": {
+        "edges": [
+          "d58c0c1b-1e7d-4764-a54c-2fa0bef01d5a"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_8": {
+        "edges": [
+          "a118e2c1-ff1e-44a4-98cd-649a737ede13"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_9": {
+        "edges": [
+          "380b4051-b2a6-4870-87ea-44a9c07b1863"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_10": {
+        "edges": [
+          "3030afbf-a040-44a4-8959-3ef9e2d4ec29"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_11": {
+        "edges": [
+          "ffd17cb1-4222-46b9-a590-d746552fefba"
+        ],
+        "attributes": []
+      },
+      "OMNICORP_support_graph_12": {
+        "edges": [
+          "c7a935a7-5c38-4464-bbfd-e2356e0ea7e3"
+        ],
+        "attributes": []
+      }
+    }
+  }
+}
