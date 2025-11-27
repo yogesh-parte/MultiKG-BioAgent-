@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomedical Agent Workflow: Epilepsy Use Case</title>
+    <!-- Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons for Professional Graphics -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Custom Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; /* Slate 50 */
+            color: #0F172A; /* Slate 900 */
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Connector Lines */
+        .connector-line {
+            width: 2px;
+            background: #CBD5E1; /* Slate 300 */
+            margin: 0 auto;
+            height: 40px;
+        }
+
+        .branch-connector {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background: #CBD5E1;
+        }
+
+        /* Card Hover Effects */
+        .agent-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .agent-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Horizontal Branch Line */
+        .branch-bar {
+            height: 2px;
+            background: #CBD5E1;
+            width: 80%;
+            margin: 0 auto 20px auto;
+            position: relative;
+        }
+        .branch-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 20px;
+            width: 2px;
+            background: #CBD5E1;
+            margin-top: -20px; /* Connect up to previous node */
+        }
+    </style>
+</head>
+<body class="py-12 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-5xl mx-auto">
+        
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4">
+                Biomedical Knowledge Graph Agent
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">End-to-End Reasoning Workflow</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto">
+                Tracing the path from a natural language query about <strong>Epilepsy</strong> to a clinically grounded answer involving Genes, Drugs, and Trials.
+            </p>
+        </header>
+
+
+        <!-- STEP 1: USER QUERY -->
+        <div class="flex flex-col items-center">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg z-10">
+                <i class="ph ph-user text-2xl"></i>
+            </div>
+            
+            <!-- Content -->
+            <div class="mt-4 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm max-w-2xl w-full text-center relative agent-card">
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">A.1 User Input</div>
+                <p class="text-lg font-medium text-slate-800">
+                    "What causes epilepsy and what drugs treat it? Also show genes and any trials."
+                </p>
+            </div>
+            
+            <!-- Connector -->
+            <div class="connector-line"></div>
+        </div>
+
+
+        <!-- STEP 2: QUERY GRAPH BUILDER -->
+        <div class="flex flex-col items-center">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white shadow-lg z-10">
+                <i class="ph ph-graph text-2xl"></i>
+            </div>
+
+            <!-- Content -->
+            <div class="mt-4 bg-white border border-purple-100 rounded-2xl p-0 shadow-sm max-w-3xl w-full overflow-hidden agent-card">
+                <div class="bg-purple-50 px-6 py-3 border-b border-purple-100 flex justify-between items-center">
+                    <span class="text-xs font-bold text-purple-700 uppercase tracking-wide">A.2 Query-Graph Agent</span>
+                    <span class="text-xs font-mono text-purple-600 bg-purple-100 px-2 py-1 rounded">LLM Transformation</span>
+                </div>
+                <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <p class="text-sm text-slate-600 mb-2">The agent translates natural language into the <strong>TRAPI 1.4 Standard</strong>.</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-green-500"></i> Identified <strong>Epilepsy</strong> (MONDO:0005151)</li>
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-green-500"></i> Inferred Target: <strong>Genes</strong></li>
+                            <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-green-500"></i> Inferred Target: <strong>Drugs</strong></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900 rounded-lg p-4 overflow-hidden relative">
+                        <div class="absolute top-2 right-3 text-xs text-slate-500 font-mono">JSON</div>
+                        <pre class="text-xs text-green-400 font-mono overflow-x-auto">
+{
+  "nodes": {
+    "n0": { "ids": ["MONDO:0005151"] },
+    "n1": { "categories": ["biolink:Gene"] },
+    "n2": { "categories": ["biolink:Drug"] }
+  },
+  "edges": { ... }
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Connector -->
+            <div class="connector-line"></div>
+        </div>
+
+
+        <!-- STEP 3: ORCHESTRATOR -->
+        <div class="flex flex-col items-center">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white shadow-lg z-10">
+                <i class="ph ph-git-fork text-2xl"></i>
+            </div>
+            
+            <div class="mt-4 mb-8 bg-indigo-50 border border-indigo-200 text-indigo-800 px-6 py-2 rounded-full text-sm font-semibold shadow-sm">
+                A.3 Orchestrator Agent Routing
+            </div>
+        </div>
+
+
+        <!-- STEP 4: KNOWLEDGE GRAPH FAN-OUT -->
+        <div class="relative w-full">
+            <!-- The horizontal bar connecting the branches -->
+            <div class="branch-bar"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- KG Group 1 -->
+                <div class="flex flex-col relative">
+                    <div class="branch-connector md:block hidden"></div>
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm h-full flex flex-col agent-card">
+                        <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-3">
+                            <div class="w-8 h-8 rounded bg-orange-100 text-orange-600 flex items-center justify-center"><i class="ph-fill ph-dna"></i></div>
+                            <h3 class="font-bold text-sm text-slate-800">Disease & Genes</h3>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <span class="text-xs font-bold text-slate-500 block">Monarch KG</span>
+                                <span class="text-xs text-slate-800">Found: SCN1A, DEPDC5</span>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <span class="text-xs font-bold text-slate-500 block">Clinical Connections</span>
+                                <span class="text-xs text-slate-800">Path: Disease → Gene</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KG Group 2 -->
+                <div class="flex flex-col relative">
+                    <div class="branch-connector md:block hidden"></div>
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm h-full flex flex-col agent-card">
+                        <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-3">
+                            <div class="w-8 h-8 rounded bg-teal-100 text-teal-600 flex items-center justify-center"><i class="ph-fill ph-pill"></i></div>
+                            <h3 class="font-bold text-sm text-slate-800">Drugs & Targets</h3>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <span class="text-xs font-bold text-slate-500 block">DrugApprovals KG</span>
+                                <span class="text-xs text-slate-800">FDA: Valproate, Topiramate</span>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <span class="text-xs font-bold text-slate-500 block">BigGIM</span>
+                                <span class="text-xs text-slate-800">Drug-Gene Interactions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KG Group 3 -->
+                <div class="flex flex-col relative">
+                    <div class="branch-connector md:block hidden"></div>
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm h-full flex flex-col agent-card">
+                        <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-3">
+                            <div class="w-8 h-8 rounded bg-rose-100 text-rose-600 flex items-center justify-center"><i class="ph-fill ph-clipboard-text"></i></div>
+                            <h3 class="font-bold text-sm text-slate-800">Trials & Omics</h3>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <span class="text-xs font-bold text-slate-500 block">ClinicalTrials KG</span>
+                                <span class="text-xs text-slate-800">NCT05100021 (Valproate)</span>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                <span class="text-xs font-bold text-slate-500 block">Wellness Multiomics</span>
+                                <span class="text-xs text-slate-800">Pathway Variants</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RE-CONVERGE -->
+        <div class="flex justify-center mt-6">
+            <div class="connector-line h-8"></div>
+        </div>
+
+
+        <!-- STEP 5: EVIDENCE MERGER -->
+        <div class="flex flex-col items-center">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center text-white shadow-lg z-10">
+                <i class="ph ph-funnel text-2xl"></i>
+            </div>
+
+            <!-- Content -->
+            <div class="mt-4 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm max-w-lg w-full text-center agent-card">
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">A.6 Evidence Merger Agent</div>
+                <div class="text-sm text-slate-700">
+                    <span class="block mb-1">Deduplication • Score Aggregation • Canonicalization</span>
+                </div>
+                <div class="mt-3 flex flex-wrap justify-center gap-2">
+                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded border border-slate-200">Merged 35 Nodes</span>
+                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded border border-slate-200">Merged 50 Edges</span>
+                </div>
+            </div>
+            
+            <!-- Connector -->
+            <div class="connector-line"></div>
+        </div>
+
+
+        <!-- STEP 6: FINAL ANSWER -->
+        <div class="flex flex-col items-center pb-12">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg z-10 animate-bounce">
+                <i class="ph ph-chat-text text-2xl"></i>
+            </div>
+
+            <!-- Content -->
+            <div class="mt-4 bg-white border border-green-200 rounded-2xl p-0 shadow-lg max-w-2xl w-full overflow-hidden agent-card ring-4 ring-green-50">
+                <div class="bg-green-600 px-6 py-3 flex justify-between items-center">
+                    <span class="text-xs font-bold text-white uppercase tracking-wide">A.7 Final Response</span>
+                    <span class="text-xs font-mono text-green-100 bg-green-700 px-2 py-1 rounded">Summarization Agent</span>
+                </div>
+                <div class="p-8 prose prose-sm max-w-none text-slate-800">
+                    <p class="font-medium text-lg leading-relaxed mb-4">
+                        Epilepsy (MONDO:0005151) is strongly associated with <strong>SCN1A</strong>, <strong>DEPDC5</strong>, and <strong>PCDH19</strong> according to Monarch and Clinical Connections.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-4">
+                        <div>
+                            <h4 class="text-green-700 font-bold text-xs uppercase mb-2 border-b border-green-100 pb-1">Mechanisms</h4>
+                            <p class="text-slate-600 text-sm">SCN1A encodes a sodium channel involved in neuronal excitability. Pathogenic variants lower seizure thresholds.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-green-700 font-bold text-xs uppercase mb-2 border-b border-green-100 pb-1">Treatments</h4>
+                            <ul class="list-disc list-inside text-slate-600 text-sm marker:text-green-500">
+                                <li><strong>Valproate</strong> (Approved)</li>
+                                <li><strong>Topiramate</strong> (Approved)</li>
+                                <li><strong>Cannabidiol</strong> (Trials: NCT04854251)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                        <span>Confidence: High</span>
+                        <span>Sources: 6 Knowledge Graphs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

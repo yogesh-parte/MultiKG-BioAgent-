@@ -1,4 +1,4 @@
-**MultiKG-BioAgent: Multi-Knowledge Graph Querying with Google ADK & MCP**
+# **MultiKG-BioAgent: Multi-Knowledge Graph Querying with Google ADK & MCP**
 **Agents Intensive Capstone Project - Phase 1**
 
 ### **Executive Summary**
