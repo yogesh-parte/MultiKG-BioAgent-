@@ -1,0 +1,272 @@
+{
+  "nl_question": "Which genes are associated with epilepsy?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0005151"], "categories": ["biolink:Disease"]},
+          "g": {"categories": ["biolink:Gene"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "g",
+            "object": "d",
+            "predicates": ["biolink:gene_associated_with_condition"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "List the genes linked to asthma.",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0002360"], "categories": ["biolink:Disease"]},
+          "g": {"categories": ["biolink:Gene"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "g",
+            "object": "d",
+            "predicates": ["biolink:gene_associated_with_condition"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "What diseases are associated with the gene SCN1A?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "g": {"ids": ["HGNC:10585"], "categories": ["biolink:Gene"]},
+          "d": {"categories": ["biolink:Disease"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "g",
+            "object": "d",
+            "predicates": ["biolink:gene_associated_with_condition"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "Which phenotypes are associated with Marfan syndrome?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0008075"], "categories": ["biolink:Disease"]},
+          "p": {"categories": ["biolink:PhenotypicFeature"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "d",
+            "object": "p",
+            "predicates": ["biolink:has_phenotype"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "What phenotypes result from mutations in CFTR?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "g": {"ids": ["HGNC:1884"], "categories": ["biolink:Gene"]},
+          "p": {"categories": ["biolink:PhenotypicFeature"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "g",
+            "object": "p",
+            "predicates": ["biolink:causes"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "Which mouse genes correspond to human SCN1A?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "h": {"ids": ["HGNC:10585"], "categories": ["biolink:Gene"]},
+          "m": {"categories": ["biolink:Gene"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "m",
+            "object": "h",
+            "predicates": ["biolink:orthologous_to"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "Which mouse genes model human epilepsy?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0005151"], "categories": ["biolink:Disease"]},
+          "m": {"categories": ["biolink:Gene"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "m",
+            "object": "d",
+            "predicates": ["biolink:model_of"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "What drugs target the gene BRAF?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "g": {"ids": ["HGNC:1097"], "categories": ["biolink:Gene"]},
+          "drug": {"categories": ["biolink:Drug"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "drug",
+            "object": "g",
+            "predicates": ["biolink:targets"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "Which drugs affect expression of the gene TP53?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "g": {"ids": ["HGNC:11998"], "categories": ["biolink:Gene"]},
+          "drug": {"categories": ["biolink:Drug"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "drug",
+            "object": "g",
+            "predicates": ["biolink:affects_expression_of"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "What drugs are approved to treat breast cancer?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0007254"], "categories": ["biolink:Disease"]},
+          "drug": {"categories": ["biolink:Drug"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "drug",
+            "object": "d",
+            "predicates": ["biolink:treats"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "What clinical trials exist for nivolumab?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "drug": {"ids": ["CHEBI:145709"], "categories": ["biolink:Drug"]},
+          "trial": {"categories": ["biolink:ClinicalTrial"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "trial",
+            "object": "drug",
+            "predicates": ["biolink:related_to"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "Which trials involve drugs used for melanoma?",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0005090"], "categories": ["biolink:Disease"]},
+          "drug": {"categories": ["biolink:Drug"]},
+          "trial": {"categories": ["biolink:ClinicalTrial"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "drug",
+            "object": "d",
+            "predicates": ["biolink:treats"]
+          },
+          "e1": {
+            "subject": "trial",
+            "object": "drug",
+            "predicates": ["biolink:related_to"]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "nl_question": "For asthma, list the implicated genes and drugs targeting those genes.",
+  "trapi": {
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "d": {"ids": ["MONDO:0002360"], "categories": ["biolink:Disease"]},
+          "g": {"categories": ["biolink:Gene"]},
+          "drug": {"categories": ["biolink:Drug"]}
+        },
+        "edges": {
+          "e0": {
+            "subject": "g",
+            "object": "d",
+            "predicates": ["biolink:gene_associated_with_condition"]
+          },
+          "e1": {
+            "subject": "drug",
+            "object": "g",
+            "predicates": ["biolink:targets"]
+          }
+        }
+      }
+    }
+  }
+}
