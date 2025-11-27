@@ -7,6 +7,12 @@ This script:
 
 Run:
     python monarch_trapi_example.py
+
+sample output:
+=== Monarch KG Gene Results ===
+Gene: SCN1A (HGNC:10585)
+Gene: ….
+
 """
 
 import asyncio
