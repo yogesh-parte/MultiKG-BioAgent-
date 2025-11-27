@@ -1,0 +1,48 @@
+@startuml
+autonumber
+
+actor User
+
+participant "Chatfront Agent\n(LLM)" as CF
+participant "Query Graph Builder\n(LLM)" as QG
+participant "Orchestrator Agent\n(LLM)" as ORC
+participant "Monarch KG" as MON
+participant "Clinical Connections KP" as CC
+participant "BigGIM KP" as BG
+participant "Drug Approvals KP" as DA
+participant "Clinical Trials KP" as CT
+participant "Multiomics KP" as OM
+participant "Evidence Merger\n(Python)" as MER
+participant "Explanation Agent\n(LLM)" as EXP
+
+User -> CF: Ask "What causes epilepsy?"
+CF -> QG: Cleaned text
+QG -> QG: Build TRAPI Query Graph
+QG --> CF: TRAPI JSON
+CF -> ORC: Submit TRAPI Query Graph
+
+ORC -> MON: Query Disease → Gene
+MON --> ORC: Response
+
+ORC -> CC: TRAPI Query
+CC --> ORC: Response
+
+ORC -> BG: TRAPI Query
+BG --> ORC: Response
+
+ORC -> DA: TRAPI Query
+DA --> ORC: Response
+
+ORC -> CT: TRAPI Query
+CT --> ORC: Response
+
+ORC -> OM: TRAPI Query
+OM --> ORC: Response
+
+ORC --> MER: All responses
+MER -> MER: Deduplicate, harmonize, rank
+MER --> EXP: Merged evidence graph
+EXP -> EXP: Compose biomedical narrative
+EXP --> CF: Final summary
+CF --> User: "Epilepsy involves SCN1A…"
+@enduml
