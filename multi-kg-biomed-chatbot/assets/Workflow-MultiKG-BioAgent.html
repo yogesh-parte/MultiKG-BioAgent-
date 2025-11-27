@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Trapi Agent Architecture</title>
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .diagram-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        /* SVG Styles */
+        svg {
+            width: 100%;
+            height: auto;
+            max-height: 800px;
+            filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+        }
+
+        .node-rect {
+            fill: #1e293b; /* Slate 800 */
+            stroke: #3b82f6; /* Blue 500 */
+            stroke-width: 2;
+            rx: 12;
+            transition: all 0.3s ease;
+        }
+
+        .node-header {
+            fill: #3b82f6;
+        }
+
+        .node-title {
+            font-size: 16px;
+            font-weight: bold;
+            fill: #ffffff;
+            font-family: monospace;
+        }
+
+        .node-desc {
+            font-size: 12px;
+            fill: #94a3b8; /* Slate 400 */
+        }
+
+        .connection-line {
+            stroke: #475569; /* Slate 600 */
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .flow-particle {
+            fill: #60a5fa; /* Blue 400 */
+            filter: drop-shadow(0 0 4px #60a5fa);
+        }
+
+        /* Specific Node Colors */
+        .node-user .node-rect { stroke: #f472b6; } /* Pink */
+        .node-user .node-header { fill: #f472b6; }
+
+        .node-adk .node-rect { stroke: #fbbf24; } /* Amber */
+        .node-adk .node-header { fill: #fbbf24; }
+
+        .node-ols .node-rect { stroke: #4ade80; } /* Green */
+        .node-ols .node-header { fill: #4ade80; }
+
+        .node-trapi .node-rect { stroke: #c084fc; } /* Purple */
+        .node-trapi .node-header { fill: #c084fc; }
+
+        .node-kg .node-rect { stroke: #22d3ee; } /* Cyan */
+        .node-kg .node-header { fill: #22d3ee; }
+
+        /* Animations */
+        @keyframes flowAnimation {
+            0% { offset-distance: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { offset-distance: 100%; opacity: 0; }
+        }
+
+        .packet-1 { animation: flowAnimation 3s infinite linear; }
+        .packet-2 { animation: flowAnimation 3s infinite linear 1s; }
+        .packet-3 { animation: flowAnimation 3s infinite linear 2s; }
+
+    </style>
+</head>
+<body>
+
+<div class="diagram-container">
+    <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+        
+        <!-- DEFINITIONS (Markers) -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#475569" />
+            </marker>
+        </defs>
+
+        <!-- LAYOUT GRID: 3 Columns, 2 Rows mostly -->
+        
+        <!-- NODE 1: USER -->
+        <g transform="translate(50, 250)" class="node-user">
+            <rect x="0" y="0" width="160" height="100" class="node-rect" />
+            <rect x="0" y="0" width="160" height="6" class="node-header" rx="3" />
+            <text x="80" y="40" text-anchor="middle" class="node-title">USER INPUT</text>
+            <text x="80" y="65" text-anchor="middle" class="node-desc">Natural Language</text>
+            <text x="80" y="80" text-anchor="middle" class="node-desc">"Genes for T2D?"</text>
+        </g>
+
+        <!-- NODE 2: AGENT ORCHESTRATOR -->
+        <g transform="translate(300, 250)" class="node-adk">
+            <rect x="0" y="0" width="180" height="120" class="node-rect" />
+            <rect x="0" y="0" width="180" height="6" class="node-header" rx="3" />
+            <text x="90" y="35" text-anchor="middle" class="node-title">AGENT ORCHESTRATOR</text>
+            <text x="90" y="55" text-anchor="middle" class="node-desc" style="font-weight:bold; fill:#fbbf24;">Google ADK</text>
+            <text x="90" y="80" text-anchor="middle" class="node-desc">State Mgmt & Tool Routing</text>
+            <text x="90" y="95" text-anchor="middle" class="node-desc">LLM Reasoning</text>
+        </g>
+
+        <!-- NODE 3: OLS GROUNDING -->
+        <g transform="translate(300, 50)" class="node-ols">
+            <rect x="0" y="0" width="180" height="100" class="node-rect" />
+            <rect x="0" y="0" width="180" height="6" class="node-header" rx="3" />
+            <text x="90" y="40" text-anchor="middle" class="node-title">OLS GROUNDING</text>
+            <text x="90" y="65" text-anchor="middle" class="node-desc" style="font-weight:bold; fill:#4ade80;">MCP Protocol</text>
+            <text x="90" y="80" text-anchor="middle" class="node-desc">Returns: MONDO:0005148</text>
+        </g>
+
+        <!-- NODE 4: TRAPI BUILDER -->
+        <g transform="translate(580, 250)" class="node-trapi">
+            <rect x="0" y="0" width="180" height="120" class="node-rect" />
+            <rect x="0" y="0" width="180" height="6" class="node-header" rx="3" />
+            <text x="90" y="35" text-anchor="middle" class="node-title">TRAPI BUILDER</text>
+            <text x="90" y="55" text-anchor="middle" class="node-desc" style="font-weight:bold; fill:#c084fc;">JSON Constructor</text>
+            <text x="90" y="80" text-anchor="middle" class="node-desc">Maps CURIEs to Graph</text>
+            <text x="90" y="95" text-anchor="middle" class="node-desc">Nodes & Edges</text>
+        </g>
+
+        <!-- NODE 5: KNOWLEDGE GRAPH -->
+        <g transform="translate(820, 250)" class="node-kg">
+            <rect x="0" y="0" width="160" height="100" class="node-rect" />
+            <rect x="0" y="0" width="160" height="6" class="node-header" rx="3" />
+            <text x="80" y="40" text-anchor="middle" class="node-title">MONARCH KG</text>
+            <text x="80" y="65" text-anchor="middle" class="node-desc" style="font-weight:bold; fill:#22d3ee;">Robokop / Automat</text>
+            <text x="80" y="80" text-anchor="middle" class="node-desc">Neo4j Backend</text>
+        </g>
+
+        <!-- PATHS -->
+        
+        <!-- User to Agent -->
+        <path id="path1" d="M 210 300 L 300 300" class="connection-line" marker-end="url(#arrowhead)"/>
+        
+        <!-- Agent to OLS (Up and Right) -->
+        <path id="path2" d="M 390 250 L 390 150" class="connection-line" marker-end="url(#arrowhead)"/>
+        
+        <!-- OLS Back to Agent -->
+        <path id="path3" d="M 410 150 L 410 240" class="connection-line" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+
+        <!-- Agent to TRAPI -->
+        <path id="path4" d="M 480 300 L 580 300" class="connection-line" marker-end="url(#arrowhead)"/>
+
+        <!-- TRAPI to KG -->
+        <path id="path5" d="M 760 300 L 820 300" class="connection-line" marker-end="url(#arrowhead)"/>
+
+        <!-- KG Back to User (Long loop) -->
+        <path id="path6" d="M 900 350 L 900 450 L 130 450 L 130 360" class="connection-line" marker-end="url(#arrowhead)" style="stroke: #64748b;"/>
+
+        <!-- LABELS ON PATHS -->
+        <text x="255" y="290" text-anchor="middle" fill="#94a3b8" font-size="10">NLP Query</text>
+        <text x="345" y="200" text-anchor="middle" fill="#94a3b8" font-size="10">Grounding</text>
+        <text x="530" y="290" text-anchor="middle" fill="#94a3b8" font-size="10">Context + IDs</text>
+        <text x="790" y="290" text-anchor="middle" fill="#94a3b8" font-size="10">POST /query</text>
+        <text x="515" y="440" text-anchor="middle" fill="#94a3b8" font-size="10">JSON Response (Knowledge Graph + Results)</text>
+
+        <!-- ANIMATED PACKETS -->
+        <circle r="4" class="flow-particle packet-1">
+            <animateMotion dur="2s" repeatCount="indefinite" path="M 210 300 L 300 300" />
+        </circle>
+
+        <circle r="4" class="flow-particle packet-1">
+            <animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M 390 250 L 390 150" />
+        </circle>
+
+        <circle r="4" class="flow-particle packet-2">
+            <animateMotion dur="2s" repeatCount="indefinite" path="M 480 300 L 580 300" />
+        </circle>
+
+        <circle r="4" class="flow-particle packet-2">
+            <animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M 760 300 L 820 300" />
+        </circle>
+
+        <circle r="4" class="flow-particle packet-3">
+            <animateMotion dur="4s" repeatCount="indefinite" path="M 900 350 L 900 450 L 130 450 L 130 360" />
+        </circle>
+
+    </svg>
+    
+    <div style="text-align:center; margin-top:20px; color:#94a3b8; font-size:14px;">
+        Agents Intensive Capstone | Phase 1: Bio-Trapi Pipeline
+    </div>
+</div>
+
+</body>
+</html>
