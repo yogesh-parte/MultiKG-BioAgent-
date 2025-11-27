@@ -3,7 +3,11 @@
 
 ### **Executive Summary**
 
-This project introduces a **Multi-Agent System** designed to bridge the gap between natural language questions and structured **Biomedical Knowledge Graphs (KGs)**. By leveraging the **Google Agent Development Kit (ADK)** and the **Model Context Protocol (MCP)**, we have created an agent capable of translating simple clinical questions into standardized **TRAPI (Translator Reasoner API)** queries.
+This project introduces a **Multi-Agent System** designed to bridge the gap between natural language questions and structured **Biomedical Knowledge Graphs (KGs)**. By leveraging the **Google Agent Development Kit (ADK)** and the **Model Context Protocol (MCP)**, we have created an agent capable of translating simple clinical questions into standardized **TRAPI (Translator Reasoner API)** queries. These TRAPI queries are then submitted to multiple biomedical KGs to retrieve relevant, grounded information in the form of knowledge graph. An LLM them utilized the question, its TRAPI query, and associated response to generated grounded answers.
+
+![Core-workflow](/multi-kg-biomed-chatbot/assets/MultiKGBioAgent-Dashboard.png)
+Figure: MultiKG-BioAgent User Interface 
+
 
 In this **Phase 1** implementation, the system focuses on **Diseases, Genes, and Chemical Entities**, solving the critical problem of "identifier hallucination" in LLMs by grounding every term using the **Ontology Lookup Service (OLS)** before querying.
 
