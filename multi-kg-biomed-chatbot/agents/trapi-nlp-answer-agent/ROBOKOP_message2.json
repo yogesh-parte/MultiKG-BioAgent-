@@ -1,0 +1,36 @@
+{
+  "message": {
+    "nodes": {
+      "n0": {
+        "categories": [
+          "biolink:ChemicalEntity"
+        ],
+        "name": "Chemical Entity"
+      },
+      "n1": {
+        "name": "epilepsy",
+        "categories": [
+          "biolink:Disease",
+          "biolink:DiseaseOrPhenotypicFeature",
+          "biolink:BiologicalEntity",
+          "biolink:ThingWithTaxon",
+          "biolink:NamedThing",
+          "biolink:Entity"
+        ],
+        "ids": [
+          "MONDO:0005027"
+        ],
+        "taxa": []
+      }
+    },
+    "edges": {
+      "e0": {
+        "subject": "n0",
+        "object": "n1",
+        "predicates": [
+          "biolink:treats"
+        ]
+      }
+    }
+  }
+}
