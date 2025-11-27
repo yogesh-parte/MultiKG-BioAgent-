@@ -39,6 +39,7 @@ NLP Question ➡️ Ontology Grounding (OLS via MCP) ➡️ TRAPI Query Construc
 
 The system is built on **Google Vertex AI Agent Builder** using the **ADK Python SDK**.
 
+
 ### **Step-by-Step Flow (Phase 1)**
 
 1.  **User Query:** "What genes are associated with Type 2 Diabetes?"
