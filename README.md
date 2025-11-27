@@ -22,6 +22,8 @@ The system:
 
 ![Project banner](./multi-kg-biomed-chatbot/assets/banner.jpeg)
 
+The final product: 
+![Finalized Product UI](./multi-kg-biomed-chatbot/assets/MultiKGBioAgent-Dashboard.png)
 ---
 
 ## Problem: Fragmented Biomedical Knowledge
@@ -112,6 +114,12 @@ See the docs/ folder for:
 - KGS_INTEGRATION.md – how each KG is integrated
 - TRAPI_EXAMPLES.md – example TRAPI messages and responses
 - ROADMAP.md – planned features.
+
+See asset folder for interactive visualization with the end product 
+
+- Interactive-Software-Workflow-Concept1.html
+- Interactive-Software-Workflow-Concept2.html
+- Workflow-MultiKG-BioAgent.html 
 
 ----
 

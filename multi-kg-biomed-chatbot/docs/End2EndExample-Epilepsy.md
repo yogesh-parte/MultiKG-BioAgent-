@@ -459,7 +459,7 @@ flowchart TD
 
 Representation of actual multi-agent invocation:
 
-````mermaid
+```mermaid
 sequenceDiagram
     autonumber
 
@@ -512,5 +512,7 @@ sequenceDiagram
     
 ```
 
----
 
+**Sequence diagram**
+
+![EpileopsyUseCaseSequence](./images/SequnceDiagram-WhatCauseEpilepsy.png)
