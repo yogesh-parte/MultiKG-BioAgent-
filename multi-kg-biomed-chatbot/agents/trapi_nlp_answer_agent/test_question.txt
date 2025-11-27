@@ -1,0 +1,108 @@
+working_query_text:What genes are associated with Parkinson disease?
+
+trapi_query
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "categories": ["biolink:Disease"],
+          "ids": ["MONDO:0005180"]
+        },
+        "n1": {
+          "categories": ["biolink:Gene"]
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n1",
+          "object": "n0",
+          "predicates": ["biolink:related_to"]
+        }
+      }
+    }
+  }
+}
+response:
+The query asks for genes related to Parkinson's Disease (MONDO:0005180). 
+The knowledge graph contains a number of genes that are related to subtypes of Parkinson's disease, 
+which are themselves subclasses of Parkinson's Disease. 
+Therefore, these genes are related to Parkinson's Disease. Here are some genes related to Parkinson's Disease: 
+CHCHD2, PRKN, SYNJ1, PINK1, PODXL, SNCA, DNAJC6, LRRK2, HTRA2, UCHL1, PARK7, VPS13C, PTPA, SNCAIP, MT-TT, 
+NR4A2, ATXN3, MAPT, ADH1C, GBA1, ATXN8OS, ATXN2, TBP, GIGYF2, VPS35, EIF4G1, DNAJC13, FBXO7.
+
+query_text:Find all genes that are associated with Diabetes mellitus.
+trapi_query:
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "categories": ["biolink:Disease"],
+          "ids": ["MONDO:0005015"]
+        },
+        "n1": {
+          "categories": ["biolink:Gene"]
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n1",
+          "object": "n0",
+          "predicates": ["biolink:gene_associated_with_condition"]
+        }
+      }
+    }
+  }
+}
+
+
+query_text:Find all drugs that are used to treat Diabetes mellitus.
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "categories": ["biolink:Disease"],
+          "ids": ["MONDO:0005015"]
+        },
+        "n1": {
+          "categories": ["biolink:Drug"]
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n1",
+          "object": "n0",
+          "predicates": ["biolink:treats"]
+        }
+      }
+    }
+  }
+}
+
+working_query_text:Find all phenotypic features (observable traits or symptoms) associated with Diabetes mellitus.
+trapi_query:
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "categories": ["biolink:Disease"],
+          "ids": ["MONDO:0005015"]
+        },
+        "n1": {
+          "categories": ["biolink:PhenotypicFeature"]
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n0",
+          "object": "n1",
+          "predicates": ["biolink:has_phenotype"]
+        }
+      }
+    }
+  }
+}
+

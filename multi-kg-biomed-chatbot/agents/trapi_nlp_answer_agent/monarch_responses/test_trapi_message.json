@@ -1,0 +1,244 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "ids": ["MONDO:0007254"],
+          "categories": ["biolink:Disease"]
+        },
+        "n1": {
+          "categories": ["biolink:Gene"]
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n1",
+          "object": "n0",
+          "predicates": ["biolink:gene_associated_with_condition"]
+        }
+      }
+    },
+    "knowledge_graph": {
+      "nodes": {
+        "MONDO:0007254": {
+          "name": "Parkinson disease",
+          "categories": ["biolink:Disease"]
+        },
+        "HGNC:11138": {
+          "name": "SNCA",
+          "categories": ["biolink:Gene"]
+        },
+        "HGNC:9211": {
+          "name": "PARK7",
+          "categories": ["biolink:Gene"]
+        },
+        "HGNC:8607": {
+          "name": "PINK1",
+          "categories": ["biolink:Gene"]
+        },
+        "HGNC:9588": {
+          "name": "PRKN",
+          "categories": ["biolink:Gene"]
+        },
+        "HGNC:6361": {
+          "name": "LRRK2",
+          "categories": ["biolink:Gene"]
+        }
+      },
+      "edges": {
+        "e_snca": {
+          "subject": "HGNC:11138",
+          "predicate": "biolink:gene_associated_with_condition",
+          "object": "MONDO:0007254",
+          "sources": [
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "knowledge_assertion"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": ["PMID:9197268", "PMID:9354792"]
+            },
+            {
+              "attribute_type_id": "biolink:has_evidence",
+              "value": "ECO:0000304"
+            }
+          ]
+        },
+        "e_park7": {
+          "subject": "HGNC:9211",
+          "predicate": "biolink:gene_associated_with_condition",
+          "object": "MONDO:0007254",
+          "sources": [
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "knowledge_assertion"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": ["PMID:12851856"]
+            },
+            {
+              "attribute_type_id": "biolink:has_evidence",
+              "value": "ECO:0000304"
+            }
+          ]
+        },
+        "e_pink1": {
+          "subject": "HGNC:8607",
+          "predicate": "biolink:gene_associated_with_condition",
+          "object": "MONDO:0007254",
+          "sources": [
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "knowledge_assertion"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": ["PMID:15146462"]
+            },
+            {
+              "attribute_type_id": "biolink:has_evidence",
+              "value": "ECO:0000304"
+            }
+          ]
+        },
+        "e_prkn": {
+          "subject": "HGNC:9588",
+          "predicate": "biolink:gene_associated_with_condition",
+          "object": "MONDO:0007254",
+          "sources": [
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "knowledge_assertion"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": ["PMID:9843205"]
+            },
+            {
+              "attribute_type_id": "biolink:has_evidence",
+              "value": "ECO:0000304"
+            }
+          ]
+        },
+        "e_lrrk2": {
+          "subject": "HGNC:6361",
+          "predicate": "biolink:gene_associated_with_condition",
+          "object": "MONDO:0007254",
+          "sources": [
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ],
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "knowledge_assertion"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "manual_agent"
+            },
+            {
+              "attribute_type_id": "biolink:publications",
+              "value": ["PMID:15558315"]
+            },
+            {
+              "attribute_type_id": "biolink:has_evidence",
+              "value": "ECO:0000304"
+            }
+          ]
+        }
+      }
+    },
+    "results": [
+      {
+        "node_bindings": {
+          "n0": [{"id": "MONDO:0007254"}],
+          "n1": [{"id": "HGNC:11138"}]
+        },
+        "edge_bindings": {
+          "e0": [{"id": "e_snca"}]
+        }
+      },
+      {
+        "node_bindings": {
+          "n0": [{"id": "MONDO:0007254"}],
+          "n1": [{"id": "HGNC:9211"}]
+        },
+        "edge_bindings": {
+          "e0": [{"id": "e_park7"}]
+        }
+      },
+      {
+        "node_bindings": {
+          "n0": [{"id": "MONDO:0007254"}],
+          "n1": [{"id": "HGNC:8607"}]
+        },
+        "edge_bindings": {
+          "e0": [{"id": "e_pink1"}]
+        }
+      },
+      {
+        "node_bindings": {
+          "n0": [{"id": "MONDO:0007254"}],
+          "n1": [{"id": "HGNC:9588"}]
+        },
+        "edge_bindings": {
+          "e0": [{"id": "e_prkn"}]
+        }
+      },
+      {
+        "node_bindings": {
+          "n0": [{"id": "MONDO:0007254"}],
+          "n1": [{"id": "HGNC:6361"}]
+        },
+        "edge_bindings": {
+          "e0": [{"id": "e_lrrk2"}]
+        }
+      }
+    ]
+  }
+}
