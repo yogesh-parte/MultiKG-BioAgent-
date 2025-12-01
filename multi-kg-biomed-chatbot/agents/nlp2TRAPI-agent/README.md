@@ -124,9 +124,34 @@ The agent uses **OntoGPT** to extract and ground biomedical entities (genes, dis
 
     supporting evidence, provenance, and KP metadata
 
+1. Workflow
+```mermaid
+flowchart TD
+
+A[User Question] --> B[OntoGPT Extraction using drug_to_disease template]
+
+B --> C{Extract Grounded Entities}
+
+C -->|Disease CURIE| D[Resolve Biolink Category using prefix mapping]
+C -->|Gene or Drug CURIE| D
+
+D --> E[Infer Predicate based on question]
+
+E --> F[Build TRAPI 1.1 Query Graph]
+
+F --> G[Send Query to TRAPI KP such as ROBOKOP or AUTOMAT]
+
+G --> H[Receive TRAPI Response including nodes edges results]
+
+H --> I[Return Structured Answer and Knowledge Graph]
+
+```
+
 1. Future Work
 
     - Expand OntoGPT templates for more question types
     - Add support for multi-hop queries
     - Integrate with additional KPs and Translator services
     - Optimize runtime performance and error handling
+
+
