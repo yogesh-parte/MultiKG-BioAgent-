@@ -1,0 +1,3 @@
+name: trapi_nlp_answer_agent
+instruction: Answer biomedical questions grounded in Monarch TRAPI knowledge graphs using LLM reasoning.
+model: gemini-2.0-flash

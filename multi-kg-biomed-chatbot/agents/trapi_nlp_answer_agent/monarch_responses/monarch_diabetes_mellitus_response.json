@@ -1,0 +1,2531 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "n0": {
+          "ids": [
+            "MONDO:0005015"
+          ],
+          "categories": [
+            "biolink:Disease"
+          ],
+          "set_interpretation": "BATCH",
+          "constraints": [],
+          "member_ids": []
+        },
+        "n1": {
+          "ids": null,
+          "categories": [
+            "biolink:PhenotypicFeature"
+          ],
+          "set_interpretation": "BATCH",
+          "constraints": [],
+          "member_ids": []
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "n0",
+          "object": "n1",
+          "knowledge_type": null,
+          "predicates": [
+            "biolink:has_phenotype"
+          ],
+          "attribute_constraints": [],
+          "qualifier_constraints": []
+        }
+      }
+    },
+    "knowledge_graph": {
+      "nodes": {
+        "MONDO:0005147": {
+          "name": "type 1 diabetes mellitus",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/MONDO_0005147",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "IDDM",
+                "T1D",
+                "T1DM",
+                "diabetes mellitis type 1",
+                "diabetes mellitis type I",
+                "immune mediated diabetes",
+                "insulin dependent diabetes",
+                "insulin-dependent diabetes mellitus",
+                "juvenile diabetes",
+                "type 1 diabetes",
+                "type I diabetes",
+                "type I diabetes mellitus"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "DOID:9744",
+                "MESH:D003922",
+                "NANDO:2200460",
+                "NCIT:C2986",
+                "OMIM:222100",
+                "Orphanet:243377",
+                "SCTID:46635009"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "MONDO",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A chronic condition characterized by minimal or absent production of insulin by the pancreas.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "MONDO:0005148": {
+          "name": "type 2 diabetes mellitus",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/MONDO_0005148",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "NIDDM",
+                "T2D",
+                "T2DM",
+                "T2DM - type 2 diabetes mellitus",
+                "adult onset diabetes",
+                "adult-onset diabetes",
+                "diabetes mellitis type 2",
+                "diabetes mellitis type II",
+                "diabetes mellitus, non-insulin-dependent, susceptibility to",
+                "diabetes mellitus, noninsulin-dependent",
+                "diabetes mellitus, noninsulin-dependent, 2",
+                "diabetes mellitus, noninsulin-dependent, association with",
+                "diabetes mellitus, noninsulin-dependent, late onset",
+                "diabetes mellitus, noninsulin-dependent, susceptibility to",
+                "diabetes mellitus, type 2",
+                "diabetes mellitus, type 2, protection against",
+                "diabetes mellitus, type 2, susceptibility to",
+                "diabetes mellitus, type II",
+                "diabetes mellitus, type II, susceptibility to",
+                "diabetes, type 2",
+                "hypertension, insulin resistance-related, susceptibility to",
+                "insulin resistance, severe, digenic",
+                "insulin resistance, susceptibility to",
+                "maturity-onset diabetes",
+                "non-insulin dependent diabetes",
+                "non-insulin dependent diabetes mellitus",
+                "non-insulin-dependent diabetes mellitus",
+                "noninsulin dependent diabetes",
+                "noninsulin-dependent diabetes mellitus",
+                "type 2 diabetes",
+                "type 2 diabetes mellitus",
+                "type 2 diabetes mellitus non-insulin dependent",
+                "type 2 diabetes mellitus, susceptibility to",
+                "type II diabetes",
+                "type II diabetes mellitus"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "DOID:9352",
+                "MESH:D003924",
+                "NANDO:2200461",
+                "NCIT:C26747",
+                "OMIM:125853",
+                "SCTID:44054006",
+                "UMLS:C0011860"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "MONDO",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A type of diabetes mellitus that is characterized by insulin resistance or desensitization and increased blood glucose levels. This is a chronic disease that can develop gradually over the life of a patient and can be linked to both environmental factors and heredity.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0000103": {
+          "name": "Polyuria",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0000103",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Increased urine output"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D011141",
+                "SNOMEDCT_US:28442001",
+                "SNOMEDCT_US:56574000",
+                "SNOMEDCT_US:718402002",
+                "UMLS:C0032617"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "An increased rate of urine production.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0410050": {
+          "name": "Decreased level of 1,5 anhydroglucitol in serum",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0410050",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Decreased level of 1,5-AG in serum",
+                "Decreased level of 1,5-anhydro-D-glucitol in serum",
+                "Decreased level of 1,5-anhydroglucitol in serum"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A decrease in the level of 1,5 anhydroglucitol in the serum. 1,5-Anhydrosorbitol is a validated marker of short-term glycemic control. This substance is derived mainly from food, is well absorbed in the intestine, and is distributed to all organs and tissues.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0003074": {
+          "name": "Hyperglycemia",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0003074",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "High blood glucose",
+                "High blood sugar"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D006943",
+                "SNOMEDCT_US:237598005",
+                "SNOMEDCT_US:80394007",
+                "UMLS:C0020456"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "An increased concentration of glucose in the blood.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0002591": {
+          "name": "Polyphagia",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0002591",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Hyperphagia",
+                "Increased appetite",
+                "Voracious appetite"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D006963",
+                "SNOMEDCT_US:267023007",
+                "SNOMEDCT_US:58424009",
+                "SNOMEDCT_US:72405004",
+                "UMLS:C0020505",
+                "UMLS:C0232461"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A neurological anomaly with gross overeating associated with an abnormally strong desire or need to eat.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0001959": {
+          "name": "Polydipsia",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0001959",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Extreme thirst"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D059606",
+                "SNOMEDCT_US:17173007",
+                "SNOMEDCT_US:267026004",
+                "UMLS:C0085602"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "Excessive thirst manifested by excessive fluid intake.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0001993": {
+          "name": "Ketoacidosis",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0001993",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "SNOMEDCT_US:56051008",
+                "UMLS:C0220982"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "Acidosis resulting from accumulation of ketone bodies.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0002960": {
+          "name": "Autoimmunity",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0002960",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Autoimmune condition",
+                "Autoimmune disease",
+                "Autoimmune disorder",
+                "Autoimmunity"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D001327",
+                "SNOMEDCT_US:85828009",
+                "UMLS:C0004364"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "The occurrence of an immune reaction against the organism's own cells or tissues.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0000819": {
+          "name": "Diabetes mellitus",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0000819",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D003920",
+                "SNOMEDCT_US:73211009",
+                "UMLS:C0011849"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A group of abnormalities characterized by hyperglycemia and glucose intolerance.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0006476": {
+          "name": "Abnormality of the pancreatic islet cells",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0006476",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "UMLS:C4025043"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "An abnormality of the islet of Langerhans, i.e., of the regions of the pancreas that contain its endocrine cells. These are the alpha cells, which produce glucagon, the beta cells, which produce insulin and amylin, the delta cells, which produce somatostatin, the PP cells, which produce pancreatic polypeptide, and the epsilon cells, which produce ghrelin.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0005978": {
+          "name": "Type II diabetes mellitus",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0005978",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Diabetes mellitus Type II",
+                "Diabetes mellitus type 2",
+                "Diabetes mellitus, noninsulin-dependent",
+                "NIDDM",
+                "NIDDM diabetes mellitus",
+                "Non-insulin dependent diabetes",
+                "Noninsulin dependent diabetes mellitus",
+                "Noninsulin-dependent diabetes",
+                "Noninsulin-dependent diabetes mellitus",
+                "Type 2 diabetes",
+                "Type II diabetes"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D003924",
+                "SNOMEDCT_US:44054006",
+                "UMLS:C0011860"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A type of diabetes mellitus initially characterized by insulin resistance and hyperinsulinemia and subsequently by glucose interolerance and hyperglycemia.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0000855": {
+          "name": "Insulin resistance",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0000855",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Body fails to respond to insulin"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "MSH:D007333",
+                "SNOMEDCT_US:48606007",
+                "UMLS:C0021655"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "Increased resistance towards insulin, that is, diminished effectiveness of insulin in reducing blood glucose levels.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "HP:0031819": {
+          "name": "Increased waist to hip ratio",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:PhenotypicFeature",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/HP_0031819",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "Increased WHR",
+                "Increased waist-hip ratio",
+                "Increased waist-to-hip ratio"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "HP",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "Increased waist-to-hip ratio (WHR) is a measurement above the average for the dimensionless ratio of the circumference of the waist to that of the hips. WHR is calculated as waist measurement divided by hip measurement.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        },
+        "MONDO:0005015": {
+          "name": "diabetes mellitus",
+          "categories": [
+            "biolink:BiologicalEntity",
+            "biolink:Disease",
+            "biolink:DiseaseOrPhenotypicFeature",
+            "biolink:Entity",
+            "biolink:NamedThing",
+            "biolink:ThingWithTaxon"
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "iri",
+              "value": "http://purl.obolibrary.org/obo/MONDO_0005015",
+              "attribute_type_id": "biolink:iri"
+            },
+            {
+              "original_attribute_name": "synonym",
+              "value": [
+                "DM",
+                "diabetes",
+                "diabetes mellitus",
+                "diabetes mellitus (disease)"
+              ],
+              "attribute_type_id": "biolink:synonym"
+            },
+            {
+              "original_attribute_name": "xref",
+              "value": [
+                "DOID:9351",
+                "EFO:0000400",
+                "HP:0000819",
+                "ICD10CM:E08-E13",
+                "ICD9:250",
+                "MESH:D003920",
+                "NANDO:2100157",
+                "NANDO:2100158",
+                "NCIT:C2985",
+                "SCTID:73211009",
+                "UMLS:C0011849"
+              ],
+              "attribute_type_id": "biolink:xref"
+            },
+            {
+              "original_attribute_name": "namespace",
+              "value": "MONDO",
+              "attribute_type_id": "biolink:Attribute"
+            },
+            {
+              "original_attribute_name": "description",
+              "value": "A metabolic disorder characterized by abnormally high blood sugar levels due to diminished production of insulin or insulin resistance/desensitization.",
+              "attribute_type_id": "biolink:description",
+              "value_type_id": "dct:description"
+            }
+          ]
+        }
+      },
+      "edges": {
+        "uuid:21cd60ca-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000103",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000501"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60c9-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0410050",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "has_percentage",
+              "value": "100.0",
+              "attribute_type_id": "biolink:has_percentage"
+            },
+            {
+              "original_attribute_name": "has_count",
+              "value": "30",
+              "attribute_type_id": "biolink:has_count"
+            },
+            {
+              "original_attribute_name": "has_total",
+              "value": "30",
+              "attribute_type_id": "biolink:has_total"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "publications",
+              "value": [
+                "PMID:9357814",
+                "PMID:17659063",
+                "PMID:16731998"
+              ],
+              "attribute_type_id": "biolink:publications",
+              "value_type_id": "linkml:Uriorcurie"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000269"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            },
+            {
+              "original_attribute_name": "has_quotient",
+              "value": "1.0",
+              "attribute_type_id": "biolink:has_quotient"
+            }
+          ]
+        },
+        "uuid:21cd60c8-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0003074",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000501"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60c7-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0002591",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000501"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60c6-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0001959",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000501"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60c5-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0001993",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000501"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60c4-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0002960",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000304"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60c3-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000819",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:222100",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000501"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "urn:uuid:ae9715be-61bb-47d3-a27d-42fe0c6579df": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0006476",
+          "sources": [
+            {
+              "resource_id": "infores:mondo",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:mondo"
+              ]
+            },
+            {
+              "resource_id": "infores:phenio",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:phenio"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:20854a77-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005148",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0005978",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:125853",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000304"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:20854a76-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005148",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000855",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:125853",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000304"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:20854a75-400a-11ef-89e7-6fe0be41fbbf": {
+          "subject": "MONDO:0005148",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0031819",
+          "sources": [
+            {
+              "resource_id": "infores:hpo-annotations",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:hpo-annotations"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "original_subject",
+              "value": "OMIM:125853",
+              "attribute_type_id": "biolink:original_subject"
+            },
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "knowledge_assertion",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "has_evidence",
+              "value": [
+                "ECO:0000304"
+              ],
+              "attribute_type_id": "biolink:has_evidence"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "manual_agent",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "urn:uuid:3aec1446-6fcc-45d7-a182-18f36ac6bdfd": {
+          "subject": "MONDO:0005148",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000855",
+          "sources": [
+            {
+              "resource_id": "infores:mondo",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:mondo"
+              ]
+            },
+            {
+              "resource_id": "infores:phenio",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:phenio"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:DiseaseToPhenotypicFeatureAssociation",
+                "biolink:FrequencyQuantifier",
+                "biolink:EntityToPhenotypicFeatureAssociationMixin",
+                "biolink:DiseaseToEntityAssociationMixin",
+                "biolink:Association",
+                "biolink:Entity",
+                "biolink:EntityToFeatureOrDiseaseQualifiersMixin",
+                "biolink:FrequencyQualifierMixin",
+                "biolink:RelationshipQuantifier"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005147",
+          "predicate": "biolink:subclass_of",
+          "object": "MONDO:0005015",
+          "sources": [
+            {
+              "resource_id": "infores:mondo",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:mondo"
+              ]
+            },
+            {
+              "resource_id": "infores:phenio",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:phenio"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:Association",
+                "biolink:Entity"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+          "subject": "MONDO:0005148",
+          "predicate": "biolink:subclass_of",
+          "object": "MONDO:0005015",
+          "sources": [
+            {
+              "resource_id": "infores:mondo",
+              "resource_role": "primary_knowledge_source"
+            },
+            {
+              "resource_id": "infores:monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:mondo"
+              ]
+            },
+            {
+              "resource_id": "infores:phenio",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:monarchinitiative"
+              ]
+            },
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "aggregator_knowledge_source",
+              "upstream_resource_ids": [
+                "infores:phenio"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "original_attribute_name": "category",
+              "value": [
+                "biolink:Association",
+                "biolink:Entity"
+              ],
+              "attribute_type_id": "biolink:category"
+            },
+            {
+              "original_attribute_name": "knowledge_level",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:knowledge_level"
+            },
+            {
+              "original_attribute_name": "agent_type",
+              "value": "not_provided",
+              "attribute_type_id": "biolink:agent_type"
+            }
+          ]
+        },
+        "uuid:21cd60ca-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000103",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60ca-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c9-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0410050",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c9-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c8-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0003074",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c8-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c7-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0002591",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c7-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c6-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0001959",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c6-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c5-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0001993",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c5-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c4-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0002960",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c4-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:21cd60c3-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000819",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:21cd60c3-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "urn:uuid:ae9715be-61bb-47d3-a27d-42fe0c6579df_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0006476",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_urn:uuid:ae9715be-61bb-47d3-a27d-42fe0c6579df_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:20854a77-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0005978",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:20854a77-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:20854a76-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000855",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:20854a76-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "uuid:20854a75-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0031819",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_uuid:20854a75-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        },
+        "urn:uuid:3aec1446-6fcc-45d7-a182-18f36ac6bdfd_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+          "subject": "MONDO:0005015",
+          "predicate": "biolink:has_phenotype",
+          "object": "HP:0000855",
+          "attributes": [
+            {
+              "attribute_type_id": "biolink:knowledge_level",
+              "value": "logical_entailment"
+            },
+            {
+              "attribute_type_id": "biolink:agent_type",
+              "value": "automated_agent"
+            },
+            {
+              "attribute_type_id": "biolink:support_graphs",
+              "value": [
+                "aux_urn:uuid:3aec1446-6fcc-45d7-a182-18f36ac6bdfd_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "resource_id": "infores:automat-monarchinitiative",
+              "resource_role": "primary_knowledge_source"
+            }
+          ]
+        }
+      }
+    },
+    "results": [
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0000103",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60ca-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0410050",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c9-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0003074",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c8-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0002591",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c7-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0001959",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c6-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0001993",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c5-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0002960",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c4-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0000819",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:21cd60c3-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0006476",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "urn:uuid:ae9715be-61bb-47d3-a27d-42fe0c6579df_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0005978",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:20854a77-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0000855",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:20854a76-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7",
+                  "attributes": []
+                },
+                {
+                  "id": "urn:uuid:3aec1446-6fcc-45d7-a182-18f36ac6bdfd_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      },
+      {
+        "node_bindings": {
+          "n0": [
+            {
+              "id": "MONDO:0005015",
+              "attributes": []
+            }
+          ],
+          "n1": [
+            {
+              "id": "HP:0031819",
+              "attributes": []
+            }
+          ]
+        },
+        "analyses": [
+          {
+            "edge_bindings": {
+              "e0": [
+                {
+                  "id": "uuid:20854a75-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7",
+                  "attributes": []
+                }
+              ]
+            },
+            "resource_id": "infores:automat-monarchinitiative"
+          }
+        ]
+      }
+    ],
+    "auxiliary_graphs": {
+      "aux_uuid:21cd60ca-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60ca-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c9-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c9-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c8-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c8-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c7-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c7-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c6-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c6-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c5-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c5-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c4-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c4-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:21cd60c3-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "uuid:21cd60c3-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_urn:uuid:ae9715be-61bb-47d3-a27d-42fe0c6579df_urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0": {
+        "edges": [
+          "urn:uuid:ae9715be-61bb-47d3-a27d-42fe0c6579df",
+          "urn:uuid:2d7fc45f-c7ec-4d53-88ea-13f04e1920c0"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:20854a77-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+        "edges": [
+          "uuid:20854a77-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:20854a76-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+        "edges": [
+          "uuid:20854a76-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+        ],
+        "attributes": []
+      },
+      "aux_uuid:20854a75-400a-11ef-89e7-6fe0be41fbbf_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+        "edges": [
+          "uuid:20854a75-400a-11ef-89e7-6fe0be41fbbf",
+          "urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+        ],
+        "attributes": []
+      },
+      "aux_urn:uuid:3aec1446-6fcc-45d7-a182-18f36ac6bdfd_urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7": {
+        "edges": [
+          "urn:uuid:3aec1446-6fcc-45d7-a182-18f36ac6bdfd",
+          "urn:uuid:fc3c1b40-9476-4737-b3ab-3cad080efcd7"
+        ],
+        "attributes": []
+      }
+    }
+  },
+  "log_level": null,
+  "workflow": [
+    {
+      "id": "lookup"
+    }
+  ],
+  "bypass_cache": null
+}
