@@ -34,15 +34,15 @@ The agent uses **OntoGPT** to extract and ground biomedical entities (genes, dis
     ```bash
     runoak set-apikey -e openai YOUR_OPENAI_KEY
     ```
-    For Google Gemini:
-    ```bash
-    runoak set-apikey -e google YOUR_GEMINI_KEY
-    ```
     This will create/update:
 
     ```bash
     ~/.config/oak/apikeys.yml
     ```
+
+    For Google Gemini: Not implemented Yet. You will need an OPENAI compatible API key that has access to Gemini models. [See here for more details](https://ai.google.dev/gemini-api/docs/openaihttps://cloud.google.com/generative-ai/docs/get-started/create-api-key).
+
+
 
 
     OntoGPT will automatically use this configuration whenever it is called.
