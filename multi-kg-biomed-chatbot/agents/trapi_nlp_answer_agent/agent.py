@@ -1,24 +1,33 @@
+"""
+TRAPI NLP Answer Agent
 
-from google.adk import Agent
+Generates natural language answers grounded strictly in TRAPI knowledge graphs.
+
+Pipeline:
+  1. extract_trapi_triples()    - Pure Python extraction (no LLM)
+  2. summarize_graph()          - LLM classifies associations
+  3. generate_answer()          - LLM composes grounded NL answer
+
+No hallucination—all facts extracted before LLM reasoning begins.
+"""
+
 import json
+from google import genai
+import os
+from google.adk import Agent
 
-# ------------------------------
-# TOOL 1 — Extract triples (Python)
-# ------------------------------
 
-def extract_trapi_triples(trapi_message: dict):
+# ============================================================================
+# TOOL 1: Extract triples (Pure Python, No LLM)
+# ============================================================================
+
+def extract_trapi_triples(trapi_message: dict) -> dict:
     """
-
-# Explicitly register tools with the agent
-try:
-    agent.add_tool(extract_triples)
-    agent.add_tool(summarize_graph)
-    agent.add_tool(generate_answer)
-except Exception:
-    pass
     Pure Python triple extraction.
     No LLM. No cost. No rate limit.
     """
+    print("[TRAPI-NLP] [EXTRACT-A] Extracting triples from TRAPI message...")
+    
     message = trapi_message.get("message", {})
     kg = message.get("knowledge_graph", {})
     results = message.get("results", [])
@@ -73,96 +82,151 @@ except Exception:
             }
         })
 
+    print(f"[TRAPI-NLP] [SUCCESS] Extracted {len(extracted)} triples")
     return {"triples": extracted}
 
 
-# ------------------------------
-# BUILD GOOGLE ADK AGENT
-# ------------------------------
-
-agent = Agent(
-    name="trapi_nlp_answer_agent",
-    model="gemini-2.0-flash",  
-    description="Generates provenance-grounded natural language answers using TRAPI KG output."
-)
-
-# Register python tool
-def extract_triples(trapi_message: dict) -> dict:
-    """Extract triples from TRAPI message."""
-    return extract_trapi_triples(trapi_message)
-
-
-# ------------------------------
-# TOOL 2 — Summarize triples (LLM)
-# ------------------------------
+# ============================================================================
+# TOOL 2: Summarize triples (LLM)
+# ============================================================================
 
 def summarize_graph(triples: dict) -> dict:
     """
-    Calls LLM to classify association types
-    and infer disease families.
+    Calls LLM to classify association types and infer disease families.
     """
-    return agent.model.generate_content(f"""
-    You are a biomedical KG summarizer.
+    print("[TRAPI-NLP] [SUMMARIZE-B] Summarizing graph with LLM (classification)...")
+    
+    if not MODEL:
+        print("[TRAPI-NLP] [WARNING] LLM not available, returning empty summary")
+        return {
+            "positive": [],
+            "negative": [],
+            "cooccurrence": [],
+            "disease_families": {}
+        }
+    
+    prompt = f"""
+You are a biomedical KG summarizer.
 
-    Group these triples:
-    {json.dumps(triples, indent=2)}
+Group these triples:
+{json.dumps(triples, indent=2)}
 
-    Into JSON with keys:
-    {{
-      "positive": [],
-      "negative": [],
-      "cooccurrence": [],
-      "disease_families": {{}}
-    }}
+Into JSON with keys:
+{{
+  "positive": [],
+  "negative": [],
+  "cooccurrence": [],
+  "disease_families": {{}}
+}}
 
-    Rules:
-    - Use BioLink semantics.
-    - "associated_with" = cooccurrence (weak)
-    - "positively_correlated_with", "treats", "causes" → positive
-    - "negatively_correlated_with", "contraindicated_for" → negative
-    - Infer disease families (e.g. leukemia → hematologic cancers).
-    """).text
+Rules:
+- Use BioLink semantics.
+- "associated_with" = cooccurrence (weak)
+- "gene_associated_with_condition" = positive
+- "negatively_correlated_with", "contraindicated_for" → negative
+- Infer disease families (e.g. leukemia → hematologic cancers).
+
+Return ONLY valid JSON. Start with {{ and end with }}.
+"""
+    
+    try:
+        resp = MODEL.generate_content(prompt)
+        text = resp.text.strip()
+        
+        # Extract JSON if wrapped in markdown code blocks
+        if "```json" in text:
+            text = text.split("```json")[1].split("```")[0].strip()
+        elif "```" in text:
+            text = text.split("```")[1].split("```")[0].strip()
+        
+        result = json.loads(text)
+        print("[TRAPI-NLP] [SUCCESS] Summary classified")
+        return result
+    except Exception as e:
+        print(f"[TRAPI-NLP] [WARNING] Error in summarization: {str(e)}")
+        return {
+            "positive": [],
+            "negative": [],
+            "cooccurrence": [],
+            "disease_families": {}
+        }
 
 
-# ------------------------------
-# TOOL 3 — Generate final answer (LLM)
-# ------------------------------
+# ============================================================================
+# TOOL 3: Generate final answer (LLM)
+# ============================================================================
 
 def generate_answer(question: str, summary: dict) -> str:
     """Generate final clinical/biomedical answer."""
+    
+    print("[TRAPI-NLP] [GENERATE-C] Generating natural language answer...")
+    
+    if not MODEL:
+        print("[TRAPI-NLP] [WARNING] LLM not available")
+        return "LLM not available"
 
-    return agent.model.generate_content(f"""
-    Create a clear biomedical answer to the question:
-    "{question}"
+    prompt = f"""
+Create a clear biomedical answer to the question:
+"{question}"
 
-    Use ONLY the following data:
-    {json.dumps(summary, indent=2)}
+Use ONLY the following data:
+{json.dumps(summary, indent=2)}
 
-    Requirements:
-    - Distinguish positive / negative / co-occurrence
-    - Mention disease family groupings
-    - No hallucination
-    - Use only TRAPI-provided facts
-    """).text
+Requirements:
+- Distinguish positive / negative / co-occurrence
+- Mention disease family groupings
+- No hallucination
+- Use only TRAPI-provided facts
+"""
+    
+    try:
+        resp = MODEL.generate_content(prompt)
+        answer = resp.text.strip()
+        print("[TRAPI-NLP] [SUCCESS] Answer generated")
+        return answer
+    except Exception as e:
+        print(f"[TRAPI-NLP] [WARNING] Error generating answer: {str(e)}")
+        return f"Error: {str(e)}"
 
 
-# ------------------------------
-# INFERENCE RUNNER
-# ------------------------------
+# ============================================================================
+# INFERENCE RUNNER (No Agent initialization here)
+# ============================================================================
 
-def run(question: str, trapi_message: dict):
+def run(question: str, trapi_message: dict) -> dict:
     """
     Executes the 3-tool pipeline:
       1. extract triples
       2. summarize graph (LLM)
       3. generate final answer (LLM)
     """
-    triples = extract_triples(trapi_message=trapi_message)
-    summary = summarize_graph(triples=triples)
-    answer = generate_answer(question=question, summary=json.loads(summary))
+    print("[TRAPI-NLP] [PIPELINE] Running TRAPI NLP pipeline...")
+    print(f"[TRAPI-NLP]    Question: {question}")
+    
+    triples_result = extract_trapi_triples(trapi_message)
+    summary = summarize_graph(triples_result)
+    answer = generate_answer(question=question, summary=summary)
 
+    print("[TRAPI-NLP] [SUCCESS] Pipeline complete\n")
+    
     return {
         "answer": answer,
-        "triples": triples,
-        "summary": json.loads(summary)
+        "triples": triples_result,
+        "summary": summary
     }
+
+
+# ============================================================================
+# ADK ROOT AGENT (Only for web server)
+# ============================================================================
+
+explain_agent = Agent(
+    name="trapi_nlp_answer_agent",
+    model="gemini-2.0-flash",
+    instruction=(
+        "You are a biomedical NLP assistant for TRAPI responses.\n"
+        '''Extract triples, classify associations, and generate grounded answers.\n from the 'Monarch_output" in the session state.'''
+        "Never hallucinate—use only provided facts from the knowledge graph."
+    ),
+    tools=[extract_trapi_triples, summarize_graph, generate_answer],
+)
