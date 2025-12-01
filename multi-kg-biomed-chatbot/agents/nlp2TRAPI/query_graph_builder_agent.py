@@ -1,3 +1,7 @@
+from google.adk.agents.llm_agent import Agent
+
+
+
 """
 NLP2TRAPI Agent (OntoGPT-only version)
 --------------------------------------
@@ -217,7 +221,61 @@ class NLP2TRAPIAgent:
 
         return {
             "question": question,
-            "disease_curie": disease_curie,
             "trapi_query": trapi_query,
-            "ontogpt_output": og_output,
         }
+
+
+_nlp2trapi = NLP2TRAPIAgent()
+
+def build_trapi_from_question(question: str) -> dict:
+    """
+    Convert a natural language biomedical question into:
+
+    - grounded disease CURIE
+    - TRAPI 1.1 query graph
+    - raw OntoGPT output
+
+    This tool does NOT call any TRAPI endpoint; it only builds the query.
+    """
+    return _nlp2trapi.process_question(question)
+
+root_agent = Agent(
+    model="gemini-2.5-flash",  # or whatever model you’re standardizing on
+    name="nlp2trapi_root_agent",
+    description=(
+        "Converts biomedical treatment questions into TRAPI 1.1 query graphs "
+        "using OntoGPT's drug_to_disease template."
+    ),
+    instruction="""
+You are a biomedical query planner that turns natural language questions
+about drugs that treat diseases into TRAPI 1.1 query graphs.
+
+When the user asks about drugs that treat a disease (e.g. 'What drugs treat
+metastatic prostate cancer?'), you MUST call the 'build_trapi_from_question'
+tool.
+
+Use the tool output as follows:
+- If it returns an error, explain the error and ask the user to rephrase.
+- If it returns a disease_curie and trapi_query, show the TRAPI JSON and give
+  a short explanation of which disease CURIE you used.
+
+You never call TRAPI KPs or ARAs yourself; you only build the query.
+""",
+    tools=[build_trapi_from_question],
+)
+
+root_agent = Agent(
+    model="gemini-2.5-flash",
+    name="nlp2trapi_root_agent",
+    description="Converts biomedical questions directly into TRAPI 1.1 Query Graphs.",
+    instruction="""
+You are an NLP→TRAPI agent.
+
+When the user asks anything related to drugs that treat a disease,
+use the 'build_trapi_from_question' tool.
+
+The tool returns ONLY a TRAPI query graph.
+Do NOT wrap it in extra text. Just return the TRAPI JSON.
+""",
+    tools=[build_trapi_from_question],
+)
