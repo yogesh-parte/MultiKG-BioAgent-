@@ -12,9 +12,32 @@ No hallucination—all facts extracted before LLM reasoning begins.
 """
 
 import json
-from google import genai
 import os
+import openai
 from google.adk import Agent
+from google.adk.models.lite_llm import LiteLlm
+
+class _Response:
+    def __init__(self, text: str):
+        self.text = text
+
+class _Model:
+    def __init__(self):
+        self._client = None
+
+    def _get_client(self):
+        if self._client is None:
+            self._client = openai.OpenAI()
+        return self._client
+
+    def generate_content(self, prompt: str):
+        resp = self._get_client().chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return _Response(resp.choices[0].message.content)
+
+MODEL = _Model()
 
 
 # ============================================================================
@@ -222,7 +245,7 @@ def run(question: str, trapi_message: dict) -> dict:
 
 explain_agent = Agent(
     name="trapi_nlp_answer_agent",
-    model="gemini-2.0-flash",
+    model=LiteLlm(model="gpt-4o-mini"),
     instruction=(
         "You are a biomedical NLP assistant for TRAPI responses.\n"
         '''Extract triples, classify associations, and generate grounded answers.\n from the 'Monarch_output" in the session state.'''

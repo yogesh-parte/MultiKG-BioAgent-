@@ -61,6 +61,7 @@ def query_monarch_trapi(
 
     try:
         resp = requests.post(MONARCH_TRAPI_URL, params=params, json=payload, timeout=60)
+        
         resp.raise_for_status()
     except requests.RequestException as e:
         # Returning a dict is nicer for the LLM than raising a raw exception
