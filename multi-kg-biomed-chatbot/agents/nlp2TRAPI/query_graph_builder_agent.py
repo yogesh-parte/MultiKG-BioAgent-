@@ -1,5 +1,6 @@
 from google.adk.agents.llm_agent import Agent
 from google.adk.models.lite_llm import LiteLlm
+from google.adk.tools import ToolContext
 
 
 
@@ -290,6 +291,36 @@ def build_trapi_from_question(question: str) -> dict:
     This tool does NOT call any TRAPI endpoint; it only builds the query.
     """
     return _nlp2trapi.process_question(question)
+
+
+def build_and_store_trapi_query(question: str, tool_context: ToolContext) -> dict:
+    """
+    Extract disease entity from question, build a TRAPI 1.4 query dict,
+    and store it directly in session state as a structured dict (not text).
+
+    Stores result under session state key 'trapi_query'.
+    Returns a status dict to the LLM.
+    """
+    cfg = _nlp2trapi.cfg
+
+    # Step 1: OntoGPT extraction
+    og_output = run_ontogpt_extract(question, cfg.ontogpt_template)
+    if "error" in og_output:
+        return {"status": "error", "reason": og_output["error"]}
+
+    # Step 2: Extract disease CURIE
+    disease_curie = extract_disease_curie(og_output)
+    if not disease_curie:
+        return {"status": "error", "reason": "No disease CURIE found in OntoGPT output."}
+
+    # Step 3: Detect query type and build TRAPI dict
+    query_type = detect_query_type(question)
+    trapi_query = build_trapi_query(disease_curie, query_type, cfg)
+
+    # Step 4: Write dict directly to session state — no LLM text involved
+    tool_context.state["trapi_query"] = trapi_query
+
+    return {"status": "ok", "disease_curie": disease_curie, "query_type": query_type}
 
 root_agent = Agent(
     model=LiteLlm(model="gpt-4o-mini"),
