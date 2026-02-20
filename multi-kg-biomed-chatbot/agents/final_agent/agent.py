@@ -8,6 +8,7 @@ from nlp2TRAPI.query_graph_builder_agent import build_and_store_trapi_query
 from monarch_agent.agent import query_monarch_trapi
 from trapi_nlp_answer_agent.agent import extract_trapi_triples
 from trapi_nlp_answer_agent.agent import explain_agent
+from final_agent.callbacks import before_monarch_tool
 
 
 def run_monarch_query(tool_context: ToolContext) -> dict:
@@ -56,6 +57,7 @@ monarch_agent = LlmAgent(
         "Return the full tool response as your final output."
     ),
     tools=[run_monarch_query],
+    before_tool_callback=before_monarch_tool,
     output_key="Monarch_output"
 )
 

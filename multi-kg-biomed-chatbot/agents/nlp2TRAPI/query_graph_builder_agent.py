@@ -319,6 +319,7 @@ def build_and_store_trapi_query(question: str, tool_context: ToolContext) -> dic
 
     # Step 4: Write dict directly to session state — no LLM text involved
     tool_context.state["trapi_query"] = trapi_query
+    tool_context.state["query_type"] = query_type
 
     return {"status": "ok", "disease_curie": disease_curie, "query_type": query_type}
 
