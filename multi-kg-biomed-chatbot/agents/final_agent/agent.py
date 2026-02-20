@@ -9,6 +9,7 @@ from monarch_agent.agent import query_monarch_trapi
 from trapi_nlp_answer_agent.agent import extract_trapi_triples
 from trapi_nlp_answer_agent.agent import explain_agent
 from final_agent.callbacks import before_monarch_tool
+from router_agent.agent import router_agent
 
 
 def run_monarch_query(tool_context: ToolContext) -> dict:
@@ -65,5 +66,5 @@ monarch_agent = LlmAgent(
 
 root_agent = SequentialAgent(
     name="biomed_kg_chatbot_agent",
-    sub_agents=[nlp_trapi_agent, monarch_agent, explain_agent],
+    sub_agents=[router_agent, nlp_trapi_agent, monarch_agent, explain_agent],
 )

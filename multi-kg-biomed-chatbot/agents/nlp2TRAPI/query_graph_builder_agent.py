@@ -313,8 +313,12 @@ def build_and_store_trapi_query(question: str, tool_context: ToolContext) -> dic
     if not disease_curie:
         return {"status": "error", "reason": "No disease CURIE found in OntoGPT output."}
 
-    # Step 3: Detect query type and build TRAPI dict
-    query_type = detect_query_type(question)
+    # Step 3: Use query_type from router query_plan if present, else detect
+    query_plan = tool_context.state.get("query_plan")
+    if query_plan and isinstance(query_plan, dict) and "query_type" in query_plan:
+        query_type = query_plan["query_type"]
+    else:
+        query_type = detect_query_type(question)
     trapi_query = build_trapi_query(disease_curie, query_type, cfg)
 
     # Step 4: Write dict directly to session state — no LLM text involved
