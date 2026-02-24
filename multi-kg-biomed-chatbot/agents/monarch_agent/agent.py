@@ -1,12 +1,28 @@
 import os
 import requests
-from typing import Any, Dict, Optional
-from google.adk.agents import Agent 
+from typing import Any, Dict, List, Optional
+from google.adk.agents import Agent
+from google.adk.agents.llm_agent import LlmAgent
+from google.adk.models.lite_llm import LiteLlm
+from google.adk.tools import ToolContext
 
 MONARCH_TRAPI_URL = os.getenv(
     "MONARCH_TRAPI_URL",
     "https://robokop-automat.apps.renci.org/monarch-kg/query",
 )
+
+
+def extract_gene_curies(trapi_response: dict) -> List[str]:
+    """Extract Gene node CURIEs from a TRAPI knowledge_graph response."""
+    nodes = (
+        trapi_response.get("message", {})
+                      .get("knowledge_graph", {})
+                      .get("nodes", {})
+    )
+    return [
+        nid for nid, ndata in nodes.items()
+        if "biolink:Gene" in ndata.get("categories", [])
+    ]
 
 def query_monarch_trapi(
     trapi_query: Dict[str, Any],
@@ -89,4 +105,60 @@ root_agent = Agent(
         "first propose a TRAPI query graph, then call the tool."
     ),
     tools=[query_monarch_trapi],
+)
+
+
+# ---------------------------------------------------------------------------
+# Pipeline-integrated monarch_agent (used by kg_orchestrator via AgentTool)
+# ---------------------------------------------------------------------------
+
+def run_monarch_query(tool_context: ToolContext) -> dict:
+    """Query Monarch KG using the trapi_query stored in session state. Call with no arguments."""
+    trapi_query = tool_context.state.get("trapi_query")
+    if not trapi_query:
+        return {"error": "No trapi_query found in session state"}
+
+    if not isinstance(trapi_query, dict):
+        return {
+            "error": "trapi_query must be a dict (structured TRAPI request).",
+            "type": str(type(trapi_query)),
+        }
+
+    msg = trapi_query.get("message")
+    qg = msg.get("query_graph") if isinstance(msg, dict) else None
+    if not qg:
+        return {"error": "Invalid TRAPI: missing message.query_graph"}
+
+    result = query_monarch_trapi(trapi_query)
+    gene_curies = extract_gene_curies(result)
+    tool_context.state["monarch_gene_curies"] = gene_curies
+    tool_context.state["Monarch_output"] = result
+    return result
+
+
+def _before_monarch_tool_proxy(tool, args, tool_context):
+    """Lazy-import wrapper to avoid circular import (final_agent/__init__.py imports agent.py)."""
+    from final_agent.callbacks import before_monarch_tool
+    return before_monarch_tool(tool, args, tool_context)
+
+
+monarch_agent = LlmAgent(
+    name="monarch_agent",
+    model=LiteLlm(model="gpt-4o-mini"),
+    description=(
+        "Queries Monarch KG for gene/phenotype associations via TRAPI. "
+        "Reads trapi_query from session state and stores gene CURIEs in monarch_gene_curies."
+    ),
+    instruction=(
+        "You are a biomedical knowledge graph agent.\n\n"
+        "Your ONLY job: call the `run_monarch_query` tool with NO arguments. "
+        "It will read the TRAPI query from session state and query Monarch KG automatically.\n\n"
+        "Do NOT pass any arguments to `run_monarch_query`.\n"
+        "Do NOT generate or modify TRAPI queries yourself.\n"
+        "After the tool call, respond with a brief summary: "
+        "OK: queried Monarch, found <N> results. (or an error message if it failed)"
+    ),
+    tools=[run_monarch_query],
+    before_tool_callback=_before_monarch_tool_proxy,
+    output_key="monarch_status",
 )

@@ -16,6 +16,7 @@ import os
 import openai
 from google.adk import Agent
 from google.adk.models.lite_llm import LiteLlm
+from google.adk.tools import ToolContext
 
 class _Response:
     def __init__(self, text: str):
@@ -43,6 +44,58 @@ MODEL = _Model()
 # ============================================================================
 # TOOL 1: Extract triples (Pure Python, No LLM)
 # ============================================================================
+
+def format_merged_evidence(merged_evidence: dict) -> dict:
+    """
+    Convert merged_evidence (from evidence_merger_agent) into the triples format
+    that the downstream summarize/generate pipeline already consumes.
+
+    merged_evidence schema: {"nodes": {...}, "edges": [...], "sources": [...]}
+    Returns: {"triples": [...]} matching the output of extract_trapi_triples.
+    """
+    nodes = merged_evidence.get("nodes", {})
+    edges = merged_evidence.get("edges", [])
+    sources = merged_evidence.get("sources", [])
+
+    extracted = []
+    for edge in edges:
+        subj_id = edge.get("subject", "")
+        obj_id = edge.get("object", "")
+        pred = edge.get("predicate", "")
+        provenance = edge.get("provenance", [])
+
+        subj_name = nodes.get(subj_id, {}).get("name", subj_id)
+        obj_name = nodes.get(obj_id, {}).get("name", obj_id)
+
+        # Flatten attributes for publications/score/knowledge_level
+        pubs, score, knowledge_level = [], None, ""
+        for attr in edge.get("attributes", []):
+            aid = attr.get("attribute_type_id", "")
+            val = attr.get("value")
+            if "publication" in aid:
+                if isinstance(val, list):
+                    pubs.extend(val)
+                else:
+                    pubs.append(val)
+            if "score" in aid or aid == "biolink:score":
+                score = val
+            if "knowledge_level" in aid:
+                knowledge_level = val
+
+        extracted.append({
+            "subject": subj_name,
+            "predicate": pred,
+            "object": obj_name,
+            "evidence": {
+                "publications": pubs[:5],
+                "knowledge_level": knowledge_level,
+                "score": score,
+                "sources": provenance,
+            }
+        })
+
+    return {"triples": extracted, "sources": sources}
+
 
 def extract_trapi_triples(trapi_message: dict) -> dict:
     """
@@ -213,6 +266,38 @@ Requirements:
 
 
 # ============================================================================
+# NO-ARG STATE WRAPPER (used by explain_agent as a tool)
+# ============================================================================
+
+def run_answer_pipeline(tool_context: ToolContext) -> dict:
+    """
+    Run the full answer pipeline from session state. Call with NO arguments.
+
+    Reads merged_evidence (or falls back to Monarch_output) and the original
+    question from session state, then runs the extract → summarize → generate pipeline.
+    """
+    # Retrieve original question from query_plan stored by route_question
+    query_plan = tool_context.state.get("query_plan", {})
+    question = query_plan.get("question", "the biomedical question") if isinstance(query_plan, dict) else "the biomedical question"
+
+    # Prefer merged_evidence; fall back to raw Monarch_output
+    merged_evidence = tool_context.state.get("merged_evidence")
+    if merged_evidence and isinstance(merged_evidence, dict) and (
+        merged_evidence.get("nodes") or merged_evidence.get("edges")
+    ):
+        triples_result = format_merged_evidence(merged_evidence)
+    else:
+        monarch_output = tool_context.state.get("Monarch_output")
+        if not monarch_output or not isinstance(monarch_output, dict):
+            return {"error": "No merged_evidence or Monarch_output found in session state"}
+        triples_result = extract_trapi_triples(monarch_output)
+
+    summary = summarize_graph(triples_result)
+    answer = generate_answer(question=question, summary=summary)
+    return {"answer": answer, "triples": triples_result, "summary": summary}
+
+
+# ============================================================================
 # INFERENCE RUNNER (No Agent initialization here)
 # ============================================================================
 
@@ -247,9 +332,11 @@ explain_agent = Agent(
     name="trapi_nlp_answer_agent",
     model=LiteLlm(model="gpt-4o-mini"),
     instruction=(
-        "You are a biomedical NLP assistant for TRAPI responses.\n"
-        '''Extract triples, classify associations, and generate grounded answers.\n from the 'Monarch_output" in the session state.'''
-        "Never hallucinate—use only provided facts from the knowledge graph."
+        "You are a biomedical NLP assistant.\n\n"
+        "Your ONLY job: call the `run_answer_pipeline` tool with NO arguments. "
+        "It reads all evidence from session state and generates a natural language answer.\n\n"
+        "Do NOT pass any arguments to `run_answer_pipeline`.\n"
+        "After the tool call, return the 'answer' field from the result as your final response."
     ),
-    tools=[extract_trapi_triples, summarize_graph, generate_answer],
+    tools=[run_answer_pipeline],
 )

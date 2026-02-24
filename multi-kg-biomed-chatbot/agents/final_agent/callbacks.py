@@ -4,6 +4,27 @@ from google.adk.tools.base_tool import BaseTool
 from google.adk.tools.tool_context import ToolContext
 
 
+def make_kg_skip_guard(kg_name: str, tool_name: str):
+    """
+    Returns a before_tool_callback that skips if kg_name not in target_kgs.
+
+    Usage:
+        before_tool_callback=make_kg_skip_guard("biggim", "query_biggim")
+    """
+    def guard(
+        tool: BaseTool,
+        args: dict[str, Any],
+        tool_context: ToolContext,
+    ) -> Optional[dict]:
+        if tool.name != tool_name:
+            return None
+        target_kgs = tool_context.state.get("target_kgs", [])
+        if kg_name not in target_kgs:
+            return {"skipped": True, "reason": f"{kg_name} not selected for this query"}
+        return None
+    return guard
+
+
 def before_monarch_tool(
     tool: BaseTool,
     args: dict[str, Any],
@@ -17,7 +38,6 @@ def before_monarch_tool(
       1. Missing trapi_query in session state
       2. trapi_query not being a dict
       3. Missing message.query_graph structure
-      4. drug_disease query type (not supported by Monarch KG)
     """
     if tool.name != "run_monarch_query":
         return None  # pass through all other tools unchanged
@@ -50,18 +70,6 @@ def before_monarch_tool(
             "error": (
                 "Cannot query Monarch: 'trapi_query' is missing 'message.query_graph'. "
                 "The TRAPI query is malformed."
-            )
-        }
-
-    # Guard 4: block drug_disease — Monarch KG has no drug treatment data
-    query_type = tool_context.state.get("query_type", "gene_disease")
-    if query_type == "drug_disease":
-        return {
-            "error": (
-                "Monarch KG does not contain drug treatment data. "
-                "The predicate 'biolink:treats' is not available in Monarch KG. "
-                "Please ask about genes or phenotypes associated with a disease instead. "
-                "Example: 'Which genes are associated with epilepsy?'"
             )
         }
 
