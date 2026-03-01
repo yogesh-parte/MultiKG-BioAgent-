@@ -6,6 +6,8 @@ from google.adk.agents.llm_agent import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
 from google.adk.tools import ToolContext
 
+from monarch_agent.callbacks import validate_monarch_query
+
 MONARCH_TRAPI_URL = os.getenv(
     "MONARCH_TRAPI_URL",
     "https://robokop-automat.apps.renci.org/monarch-kg/query",
@@ -136,12 +138,6 @@ def run_monarch_query(tool_context: ToolContext) -> dict:
     return result
 
 
-def _before_monarch_tool_proxy(tool, args, tool_context):
-    """Lazy-import wrapper to avoid circular import (final_agent/__init__.py imports agent.py)."""
-    from final_agent.callbacks import before_monarch_tool
-    return before_monarch_tool(tool, args, tool_context)
-
-
 monarch_agent = LlmAgent(
     name="monarch_agent",
     model=LiteLlm(model="gpt-4o-mini"),
@@ -159,6 +155,6 @@ monarch_agent = LlmAgent(
         "OK: queried Monarch, found <N> results. (or an error message if it failed)"
     ),
     tools=[run_monarch_query],
-    before_tool_callback=_before_monarch_tool_proxy,
+    before_tool_callback=validate_monarch_query,
     output_key="monarch_status",
 )
