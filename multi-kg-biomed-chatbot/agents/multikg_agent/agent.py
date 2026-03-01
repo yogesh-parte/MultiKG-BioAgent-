@@ -6,7 +6,7 @@ from google.adk.tools import ToolContext
 from nlp2TRAPI.query_graph_builder_agent import build_and_store_trapi_query
 from monarch_agent.agent import query_monarch_trapi
 from trapi_nlp_answer_agent.agent import explain_agent
-from final_agent.callbacks import validate_monarch_query
+from multikg_agent.callbacks import validate_monarch_query
 
 
 def run_monarch_query(tool_context: ToolContext) -> dict:
