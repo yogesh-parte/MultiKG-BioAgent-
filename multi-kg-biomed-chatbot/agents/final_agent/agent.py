@@ -2,13 +2,11 @@ from google.adk.agents.sequential_agent import SequentialAgent
 from google.adk.agents.llm_agent import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
 from google.adk.tools import ToolContext
-import json
 
 from nlp2TRAPI.query_graph_builder_agent import build_and_store_trapi_query
 from monarch_agent.agent import query_monarch_trapi
-from trapi_nlp_answer_agent.agent import extract_trapi_triples
 from trapi_nlp_answer_agent.agent import explain_agent
-from final_agent.callbacks import before_monarch_tool
+from final_agent.callbacks import validate_monarch_query
 
 
 def run_monarch_query(tool_context: ToolContext) -> dict:
@@ -57,7 +55,7 @@ monarch_agent = LlmAgent(
         "Return the full tool response as your final output."
     ),
     tools=[run_monarch_query],
-    before_tool_callback=before_monarch_tool,
+    before_tool_callback=validate_monarch_query,
     output_key="Monarch_output"
 )
 

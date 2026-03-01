@@ -12,7 +12,6 @@ No hallucination—all facts extracted before LLM reasoning begins.
 """
 
 import json
-import os
 import openai
 from google.adk import Agent
 from google.adk.models.lite_llm import LiteLlm
