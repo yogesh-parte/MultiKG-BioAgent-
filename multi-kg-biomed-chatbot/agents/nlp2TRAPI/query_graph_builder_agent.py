@@ -1,3 +1,9 @@
+from google.adk.agents.llm_agent import Agent
+from google.adk.models.lite_llm import LiteLlm
+from google.adk.tools import ToolContext
+
+
+
 """
 NLP2TRAPI Agent (OntoGPT-only version)
 --------------------------------------
@@ -27,10 +33,14 @@ Production can pass trapi_query to your async httpx client.
 """
 
 import json
+import os
 import subprocess
+import sys
 import tempfile
 from dataclasses import dataclass
 from typing import Any, Dict, Optional
+
+ONTOGPT_BIN = os.path.join(os.path.dirname(sys.executable), "ontogpt")
 
 from bmt import Toolkit
 
@@ -66,16 +76,7 @@ def run_ontogpt_extract(text: str, template: str) -> Dict[str, Any]:
         f.flush()
         input_path = f.name
 
-    cmd = [
-        "ontogpt",
-        "extract",
-        "-t",
-        template,
-        "-i",
-        input_path,
-        "--output-format",
-        "json",
-    ]
+    cmd = [ONTOGPT_BIN, "extract", "-t", template, "-i", input_path, "--output-format", "json"]
 
     try:
         completed = subprocess.run(
@@ -143,28 +144,83 @@ def extract_disease_curie(og: Dict[str, Any]) -> Optional[str]:
 
 
 # ---------------------------------------------------------------------
-# STEP 3: Build TRAPI 1.1 Query Graph
+# STEP 3: Detect query type from question
 # ---------------------------------------------------------------------
 
 
-def build_trapi_query(disease_curie: str, cfg: NLP2TRAPIConfig) -> Dict[str, Any]:
+def detect_query_type(question: str) -> str:
+    q = question.lower()
+    if any(w in q for w in ["gene", "genes", "genetic", "mutation", "variant"]):
+        return "gene_disease"
+    if any(w in q for w in ["phenotype", "symptom", "symptoms", "feature"]):
+        return "phenotype_disease"
+    return "gene_disease"  # default for Monarch KG
+
+
+# ---------------------------------------------------------------------
+# STEP 4: Build TRAPI 1.4 Query Graph
+# ---------------------------------------------------------------------
+
+
+def build_trapi_query(disease_curie: str, query_type: str, cfg: NLP2TRAPIConfig) -> Dict[str, Any]:
     """
-    TRAPI 1.1 format expected by ROBOKOP/AUTOMAT:
-        Drug --treats--> Disease
+    TRAPI 1.4 format (categories as lists) for Monarch KG.
+    Supports gene_disease, phenotype_disease, and drug_disease patterns.
     """
-    return {
-        "message": {
-            "query_graph": {
-                "nodes": {
-                    "n0": {"ids": [disease_curie], "category": cfg.disease_category},
-                    "n1": {"category": cfg.drug_category},
-                },
-                "edges": {
-                    "e0": {"subject": "n1", "object": "n0", "predicate": cfg.treats_predicate}
-                },
+    if query_type == "gene_disease":
+        return {
+            "message": {
+                "query_graph": {
+                    "nodes": {
+                        "n0": {"ids": [disease_curie], "categories": ["biolink:Disease"]},
+                        "n1": {"categories": ["biolink:Gene"]},
+                    },
+                    "edges": {
+                        "e0": {
+                            "subject": "n1",
+                            "object": "n0",
+                            "predicates": ["biolink:gene_associated_with_condition"],
+                        }
+                    },
+                }
             }
         }
-    }
+    elif query_type == "phenotype_disease":
+        return {
+            "message": {
+                "query_graph": {
+                    "nodes": {
+                        "n0": {"ids": [disease_curie], "categories": ["biolink:Disease"]},
+                        "n1": {"categories": ["biolink:PhenotypicFeature"]},
+                    },
+                    "edges": {
+                        "e0": {
+                            "subject": "n0",
+                            "object": "n1",
+                            "predicates": ["biolink:has_phenotype"],
+                        }
+                    },
+                }
+            }
+        }
+    else:  # drug_disease (default)
+        return {
+            "message": {
+                "query_graph": {
+                    "nodes": {
+                        "n0": {"ids": [disease_curie], "categories": ["biolink:Disease"]},
+                        "n1": {"categories": ["biolink:ChemicalEntity"]},
+                    },
+                    "edges": {
+                        "e0": {
+                            "subject": "n1",
+                            "object": "n0",
+                            "predicates": ["biolink:treats"],
+                        }
+                    },
+                }
+            }
+        }
 
 
 # ---------------------------------------------------------------------
@@ -213,11 +269,72 @@ class NLP2TRAPIAgent:
         # -------------------------------------------------------------
         # Step 3: Build TRAPI query graph
         # -------------------------------------------------------------
-        trapi_query = build_trapi_query(disease_curie, self.cfg)
+        query_type = detect_query_type(question)
+        trapi_query = build_trapi_query(disease_curie, query_type, self.cfg)
 
         return {
             "question": question,
-            "disease_curie": disease_curie,
             "trapi_query": trapi_query,
-            "ontogpt_output": og_output,
         }
+
+
+_nlp2trapi = NLP2TRAPIAgent()
+
+def build_trapi_from_question(question: str) -> dict:
+    """
+    Convert a natural language biomedical question into:
+
+    - grounded disease CURIE
+    - TRAPI 1.1 query graph
+    - raw OntoGPT output
+
+    This tool does NOT call any TRAPI endpoint; it only builds the query.
+    """
+    return _nlp2trapi.process_question(question)
+
+
+def build_and_store_trapi_query(question: str, tool_context: ToolContext) -> dict:
+    """
+    Extract disease entity from question, build a TRAPI 1.4 query dict,
+    and store it directly in session state as a structured dict (not text).
+
+    Stores result under session state key 'trapi_query'.
+    Returns a status dict to the LLM.
+    """
+    cfg = _nlp2trapi.cfg
+
+    # Step 1: OntoGPT extraction
+    og_output = run_ontogpt_extract(question, cfg.ontogpt_template)
+    if "error" in og_output:
+        return {"status": "error", "reason": og_output["error"]}
+
+    # Step 2: Extract disease CURIE
+    disease_curie = extract_disease_curie(og_output)
+    if not disease_curie:
+        return {"status": "error", "reason": "No disease CURIE found in OntoGPT output."}
+
+    # Step 3: Detect query type and build TRAPI dict
+    query_type = detect_query_type(question)
+    trapi_query = build_trapi_query(disease_curie, query_type, cfg)
+
+    # Step 4: Write dict directly to session state — no LLM text involved
+    tool_context.state["trapi_query"] = trapi_query
+    tool_context.state["query_type"] = query_type
+
+    return {"status": "ok", "disease_curie": disease_curie, "query_type": query_type}
+
+root_agent = Agent(
+    model=LiteLlm(model="gpt-4o-mini"),
+    name="nlp2trapi_root_agent",
+    description="Converts biomedical questions directly into TRAPI 1.1 Query Graphs.",
+    instruction="""
+You are an NLP→TRAPI agent.
+
+When the user asks anything related to drugs that treat a disease,
+use the 'build_trapi_from_question' tool.
+
+The tool returns ONLY a TRAPI query graph.
+Do NOT wrap it in extra text. Just return the TRAPI JSON.
+""",
+    tools=[build_trapi_from_question],
+)

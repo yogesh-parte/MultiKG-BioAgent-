@@ -9,7 +9,7 @@ MONARCH_TRAPI_URL = os.getenv(
 )
 
 def query_monarch_trapi(
-    trapi_request: Dict[str, Any],
+    trapi_query: Dict[str, Any],
     subclass: bool = True,
     validate: bool = True,
 ) -> Dict[str, Any]:
@@ -21,7 +21,7 @@ def query_monarch_trapi(
     - You need to execute that query against Monarch KG and then reason over the returned `knowledge_graph` and `results`.
 
     Args:
-        trapi_request:
+        trapi_query:
             A dict in TRAPI 1.4 format expected by Monarch-KG's `/monarch-kg/query` endpoint.
             Minimum:
               {
@@ -53,14 +53,15 @@ def query_monarch_trapi(
         params["validate"] = "true"
 
     # If user only gave "message", wrap into full TRAPI request
-    if "message" in trapi_request and "query_graph" in trapi_request["message"] and len(trapi_request) == 1:
-        payload = trapi_request
+    if "message" in trapi_query and "query_graph" in trapi_query["message"] and len(trapi_query) == 1:
+        payload = trapi_query
     else:
         # Assume user already provided a full request; just pass it through
-        payload = trapi_request
+        payload = trapi_query
 
     try:
         resp = requests.post(MONARCH_TRAPI_URL, params=params, json=payload, timeout=60)
+        
         resp.raise_for_status()
     except requests.RequestException as e:
         # Returning a dict is nicer for the LLM than raising a raw exception
